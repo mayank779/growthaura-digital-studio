@@ -72,38 +72,35 @@ export function Header() {
         </button>
       </div>
 
-      <div
-        className={cn(
-          "lg:hidden",
-          isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-        )}
-      >
-        <div className="border-t border-slate-700 bg-ink-900 px-4 pb-6 pt-4 sm:px-6">
-          <nav className="grid gap-2">
-            {navItems.map((item) => {
-              const active =
-                item.href === "/" ? pathname === "/" : pathname === item.href || pathname.startsWith(`${item.href}/`);
-              return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className={cn(
-                    "rounded-xl px-4 py-3 text-sm font-medium transition",
-                    active
-                      ? "bg-slate-800 text-white"
-                      : "text-slate-300 hover:bg-slate-800/70 hover:text-white"
-                  )}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-          <PrimaryLink href="/contact" className="mt-4 w-full">
-            Get Free Growth Plan
-          </PrimaryLink>
+      {isMenuOpen ? (
+        <div className="lg:hidden">
+          <div className="border-t border-slate-700 bg-ink-900 px-4 pb-6 pt-4 sm:px-6">
+            <nav className="grid gap-2">
+              {navItems.map((item) => {
+                const active =
+                  item.href === "/" ? pathname === "/" : pathname === item.href || pathname.startsWith(`${item.href}/`);
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={cn(
+                      "rounded-xl px-4 py-3 text-sm font-medium transition",
+                      active
+                        ? "bg-slate-800 text-white"
+                        : "text-slate-300 hover:bg-slate-800/70 hover:text-white"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </nav>
+            <PrimaryLink href="/contact" className="mt-4 w-full">
+              Get Free Growth Plan
+            </PrimaryLink>
+          </div>
         </div>
-      </div>
+      ) : null}
     </header>
   );
 }
