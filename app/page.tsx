@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, BarChart3, CheckCircle2, Rocket, ShieldCheck, Target } from "lucide-react";
 import { HeroSlider } from "@/components/HeroSlider";
 import { ServiceCard } from "@/components/ServiceCard";
 import { PricingCard } from "@/components/PricingCard";
@@ -23,6 +23,41 @@ export const metadata: Metadata = {
   description:
     "GrowthAura Digital Studio builds conversion-focused websites and ROI-driven SEO, social media, Google Ads, Meta Ads, and email marketing systems for Indian businesses."
 };
+
+const highlightDesigns = [
+  {
+    icon: BarChart3,
+    label: "ROI Focus",
+    metric: "Metrics-first execution",
+    card: "from-brand-100/70 via-white to-blue-50/80",
+    iconWrap: "from-brand-500 to-blue-500",
+    glow: "bg-brand-300/45"
+  },
+  {
+    icon: Target,
+    label: "Conversion First",
+    metric: "Funnels engineered to convert",
+    card: "from-violet-100/70 via-white to-brand-50/70",
+    iconWrap: "from-violet-500 to-brand-500",
+    glow: "bg-violet-300/45"
+  },
+  {
+    icon: ShieldCheck,
+    label: "Clarity & Trust",
+    metric: "Transparent reporting cadence",
+    card: "from-emerald-100/60 via-white to-cyan-50/70",
+    iconWrap: "from-emerald-500 to-cyan-500",
+    glow: "bg-emerald-300/45"
+  },
+  {
+    icon: Rocket,
+    label: "Growth Partner",
+    metric: "Built for Indian startups",
+    card: "from-amber-100/70 via-white to-orange-50/70",
+    iconWrap: "from-amber-500 to-orange-500",
+    glow: "bg-amber-300/45"
+  }
+];
 
 export default function HomePage() {
   return (
@@ -81,8 +116,9 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <Container>
+      <section className="relative overflow-hidden py-16 sm:py-20">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-brand-100/35 to-transparent" />
+        <Container className="relative">
           <SectionHeading
             eyebrow="Why GrowthAura"
             title="Built for results, not vanity metrics"
@@ -90,12 +126,38 @@ export default function HomePage() {
             align="center"
           />
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {highlightCards.map((item) => (
-              <article key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-ink-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.description}</p>
-              </article>
-            ))}
+            {highlightCards.map((item, index) => {
+              const design = highlightDesigns[index % highlightDesigns.length];
+              const Icon = design.icon;
+
+              return (
+                <article
+                  key={item.title}
+                  className={`group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-br ${design.card} p-6 shadow-[0_12px_30px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(31,45,88,0.18)]`}
+                >
+                  <div className={`pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full blur-3xl ${design.glow}`} />
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-500 via-blue-500 to-violet-500" />
+
+                  <div className="relative">
+                    <p className="mb-4 inline-flex rounded-full border border-white/60 bg-white/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-700">
+                      {design.label}
+                    </p>
+                    <div className="mb-5 flex items-center gap-4">
+                      <span
+                        className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-lg ${design.iconWrap}`}
+                      >
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <p className="text-xs font-semibold uppercase tracking-[0.11em] text-slate-500">
+                        {design.metric}
+                      </p>
+                    </div>
+                    <h3 className="text-xl font-semibold leading-snug text-ink-900">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-700">{item.description}</p>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </Container>
       </section>
