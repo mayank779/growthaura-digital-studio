@@ -4,7 +4,7 @@ import { NavItem } from "@/lib/types";
 export const siteConfig = {
   brandName: "GrowthAura Digital Studio",
   shortBrand: "GrowthAura",
-  domain: "https://growthaura.example",
+  domain: "https://growthaura-digital-studio.vercel.app",
   tagline: "Growth-focused websites, SEO, and ads for ambitious Indian brands.",
   address: "4th Floor, Koramangala 5th Block, Bengaluru, Karnataka 560095",
   phone: "+91 98765 43210",
