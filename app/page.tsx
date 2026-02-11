@@ -421,8 +421,12 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section id="design-pricing" className="relative overflow-hidden bg-white py-16 sm:py-20">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-violet-100/35 to-transparent" />
+      <section
+        id="design-pricing"
+        className="relative overflow-hidden bg-gradient-to-br from-[#f5fbff] via-[#f8fbff] to-[#f4fff6] py-16 sm:py-20"
+      >
+        <div className="pointer-events-none absolute -left-20 top-10 h-64 w-64 rounded-full bg-cyan-200/35 blur-3xl" />
+        <div className="pointer-events-none absolute -right-16 bottom-0 h-72 w-72 rounded-full bg-emerald-200/35 blur-3xl" />
         <Container className="relative">
           <SectionHeading
             eyebrow="Design + UX"
@@ -439,7 +443,16 @@ export default function HomePage() {
 
           <div className="space-y-8">
             {designPricingSections.map((section) => (
-              <article key={section.id} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
+              <article
+                key={section.id}
+                className={cn(
+                  "group relative overflow-hidden rounded-3xl border p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(15,23,42,0.14)] sm:p-8",
+                  section.id === "graphic-design"
+                    ? "border-cyan-100 bg-gradient-to-br from-cyan-50/70 via-white to-blue-50/70"
+                    : "border-emerald-100 bg-gradient-to-br from-emerald-50/70 via-white to-lime-50/70"
+                )}
+              >
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-400 via-brand-500 to-emerald-400" />
                 <h3 className="font-heading text-2xl font-semibold text-ink-900 sm:text-3xl">{section.label}</h3>
                 <p className="mt-2 text-sm text-slate-600 sm:text-base">{section.description}</p>
 
@@ -448,8 +461,10 @@ export default function HomePage() {
                     <article
                       key={plan.name}
                       className={cn(
-                        "rounded-3xl border border-slate-200 bg-white p-5 shadow-sm",
-                        plan.featured && "border-brand-300 ring-1 ring-brand-200"
+                        "rounded-3xl border bg-white/90 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-[0_18px_35px_rgba(30,41,59,0.16)]",
+                        plan.featured
+                          ? "border-brand-300 bg-gradient-to-br from-brand-50/45 to-white ring-1 ring-brand-200"
+                          : "border-slate-200"
                       )}
                     >
                       {plan.featured ? (
@@ -457,7 +472,7 @@ export default function HomePage() {
                           Most Popular
                         </p>
                       ) : null}
-                      <h4 className="mt-3 text-xl font-semibold text-ink-900">{plan.name}</h4>
+                      <h4 className="mt-3 text-xl font-semibold text-ink-900 transition hover:text-brand-700">{plan.name}</h4>
                       <p className="mt-1 text-sm text-slate-600">{plan.audience}</p>
                       <p className="mt-3 text-base font-semibold text-brand-700">
                         <PriceText value={plan.price} />
@@ -477,7 +492,7 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white/75 p-4 backdrop-blur-sm">
                   <p className="text-sm text-slate-600">{section.note ?? "Custom scope pricing available based on goals and complexity."}</p>
                   <div className="flex flex-wrap gap-2">
                     <Link
