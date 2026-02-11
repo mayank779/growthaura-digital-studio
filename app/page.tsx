@@ -468,29 +468,43 @@ export default function HomePage() {
                     <article
                       key={plan.name}
                       className={cn(
-                        "rounded-3xl border bg-gradient-to-br from-white/80 via-white/70 to-white/50 p-5 shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-brand-300 hover:from-white/95 hover:to-brand-50/40 hover:shadow-[0_18px_35px_rgba(30,41,59,0.16)]",
-                        plan.featured
-                          ? "border-brand-300 bg-gradient-to-br from-brand-100/70 via-white/85 to-violet-100/45 ring-1 ring-brand-200"
-                          : "border-slate-200"
+                        "rounded-3xl border p-5 shadow-md backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(15,23,42,0.45)]",
+                        section.id === "graphic-design"
+                          ? "border-cyan-300/35 bg-gradient-to-br from-[#081833]/95 via-[#0f2950]/92 to-[#163f74]/88"
+                          : "border-emerald-300/35 bg-gradient-to-br from-[#0b1d18]/95 via-[#123327]/92 to-[#1a4a38]/88",
+                        plan.featured &&
+                          (section.id === "graphic-design"
+                            ? "border-brand-300/70 bg-gradient-to-br from-[#1a2f67]/95 via-[#273b7a]/92 to-[#2c4ca8]/88 ring-1 ring-brand-300/40"
+                            : "border-emerald-300/65 bg-gradient-to-br from-[#173e2f]/95 via-[#1d4c39]/92 to-[#236c4f]/88 ring-1 ring-emerald-300/40")
                       )}
                     >
                       {plan.featured ? (
-                        <p className="inline-flex rounded-full border border-brand-200 bg-brand-50 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-700">
+                        <p className="inline-flex rounded-full border border-white/30 bg-white/15 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-white">
                           Most Popular
                         </p>
                       ) : null}
-                      <h4 className="mt-3 text-xl font-semibold text-ink-900 transition hover:text-brand-700">{plan.name}</h4>
-                      <p className="mt-1 text-sm text-slate-600">{plan.audience}</p>
-                      <p className="mt-3 text-base font-semibold text-brand-700">
+                      <h4 className="mt-3 text-xl font-semibold text-white">{plan.name}</h4>
+                      <p className="mt-1 text-sm text-slate-200/90">{plan.audience}</p>
+                      <p
+                        className={cn(
+                          "mt-3 text-base font-semibold",
+                          section.id === "graphic-design" ? "text-cyan-200" : "text-emerald-200"
+                        )}
+                      >
                         <PriceText value={plan.price} />
                       </p>
                       {plan.timeline ? (
-                        <p className="mt-1 text-xs font-semibold uppercase tracking-[0.08em] text-slate-500">{plan.timeline}</p>
+                        <p className="mt-1 text-xs font-semibold uppercase tracking-[0.08em] text-slate-300">{plan.timeline}</p>
                       ) : null}
-                      <ul className="mt-4 space-y-2 text-sm text-slate-600">
+                      <ul className="mt-4 space-y-2 text-sm text-slate-100/90">
                         {plan.points.map((point) => (
                           <li key={point} className="flex gap-2">
-                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
+                            <CheckCircle2
+                              className={cn(
+                                "mt-0.5 h-4 w-4 shrink-0",
+                                section.id === "graphic-design" ? "text-cyan-200" : "text-emerald-200"
+                              )}
+                            />
                             <span>{point}</span>
                           </li>
                         ))}
