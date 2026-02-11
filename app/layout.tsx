@@ -22,11 +22,11 @@ const body = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
   title: {
-    default: "GrowthAura Digital Studio | Website Development & Marketing Agency in India",
-    template: "%s | GrowthAura Digital Studio"
+    default: "Mayank Digital Labs | Website Development & Marketing Agency in India",
+    template: "%s | Mayank Digital Labs"
   },
   description:
-    "GrowthAura is a digital marketing agency in India specializing in website development, SEO, Google Ads, Meta Ads, social media, and email marketing.",
+    "Mayank Digital Labs is a digital marketing agency in India specializing in website development, SEO, Google Ads, Meta Ads, social media, and email marketing.",
   keywords: [
     "website development agency in India",
     "SEO and Google Ads expert",
@@ -34,17 +34,27 @@ export const metadata: Metadata = {
     "Instagram LinkedIn marketing agency",
     "Meta ads management India"
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" }
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon.ico"]
+  },
+  manifest: "/manifest.webmanifest",
   openGraph: {
-    title: "GrowthAura Digital Studio",
+    title: "Mayank Digital Labs",
     description: siteConfig.tagline,
     url: siteConfig.domain,
-    siteName: "GrowthAura Digital Studio",
+    siteName: "Mayank Digital Labs",
     type: "website",
     locale: "en_IN"
   },
   twitter: {
     card: "summary_large_image",
-    title: "GrowthAura Digital Studio",
+    title: "Mayank Digital Labs",
     description: siteConfig.tagline
   }
 };
@@ -90,3 +100,4 @@ export default function RootLayout({
     </html>
   );
 }
+

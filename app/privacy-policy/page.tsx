@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy policy for GrowthAura Digital Studio."
+  description: "Privacy policy for Mayank Digital Labs."
 };
 
 export default function PrivacyPolicyPage() {
@@ -19,3 +19,4 @@ export default function PrivacyPolicyPage() {
     </section>
   );
 }
+

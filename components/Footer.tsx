@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Instagram, Linkedin, Facebook, Youtube, Phone, Mail, MapPin } from "lucide-react";
 import { footerResources, siteConfig } from "@/data/site";
 import { services } from "@/data/services";
@@ -19,9 +19,9 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <BrandLogo compact className="mb-4" />
-            <h3 className="text-lg font-semibold text-ink-900">About GrowthAura</h3>
+            <h3 className="text-lg font-semibold text-ink-900">About Mayank Digital Labs</h3>
             <p className="mt-3 text-sm leading-relaxed text-slate-600">
-              GrowthAura Digital Studio helps Indian startups and SMEs scale with conversion-focused websites,
+              Mayank Digital Labs helps Indian startups and SMEs scale with conversion-focused websites,
               SEO, social media, ads, and lifecycle marketing.
             </p>
           </div>
@@ -93,9 +93,11 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-slate-200 pt-6 text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} GrowthAura Digital Studio. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Mayank Digital Labs. All rights reserved.</p>
         </div>
       </Container>
     </footer>
   );
 }
+
+

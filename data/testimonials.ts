@@ -1,4 +1,4 @@
-import { Testimonial } from "@/lib/types";
+﻿import { Testimonial } from "@/lib/types";
 
 // Edit testimonial names/quotes here.
 export const testimonials: Testimonial[] = [
@@ -7,7 +7,7 @@ export const testimonials: Testimonial[] = [
     role: "Founder",
     company: "Nouriva Wellness",
     quote:
-      "GrowthAura redesigned our funnel and SEO strategy. We now get better quality leads and measurable revenue growth every month.",
+      "Mayank Digital Labs redesigned our funnel and SEO strategy. We now get better quality leads and measurable revenue growth every month.",
     rating: 5
   },
   {
@@ -51,3 +51,4 @@ export const testimonials: Testimonial[] = [
     rating: 5
   }
 ];
+

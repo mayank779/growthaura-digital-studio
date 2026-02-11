@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -7,7 +7,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Explore GrowthAura portfolio projects across e-commerce, coaching, real estate, healthcare, and local services with measurable growth outcomes."
+    "Explore Mayank Digital Labs portfolio projects across e-commerce, coaching, real estate, healthcare, and local services with measurable growth outcomes."
 };
 
 export default function PortfolioPage() {
@@ -32,7 +32,7 @@ export default function PortfolioPage() {
         <Container>
           <SectionHeading
             eyebrow="Projects"
-            title="Selected GrowthAura campaigns and buildouts"
+            title="Selected Mayank Digital Labs campaigns and buildouts"
             description="Each project includes services delivered and measurable outcomes."
           />
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -45,3 +45,4 @@ export default function PortfolioPage() {
     </div>
   );
 }
+

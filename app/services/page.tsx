@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
@@ -32,7 +32,7 @@ export default function ServicesPage() {
             Services
           </p>
           <h1 className="font-heading text-4xl font-semibold leading-tight sm:text-5xl">
-            GrowthAura services built to generate leads, revenue, and brand authority
+            Mayank Digital Labs services built to generate leads, revenue, and brand authority
           </h1>
           <p className="mt-5 text-base leading-relaxed text-slate-200 sm:text-lg">
             We combine web development, SEO, social media, performance ads, email marketing, and creative
@@ -97,7 +97,7 @@ export default function ServicesPage() {
               href="/contact#lead-form"
               className="inline-flex items-center justify-center rounded-full bg-ink-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink-800"
             >
-              Talk to GrowthAura
+              Talk to Mayank Digital Labs
             </Link>
           </div>
         </Container>
@@ -105,3 +105,4 @@ export default function ServicesPage() {
     </div>
   );
 }
+

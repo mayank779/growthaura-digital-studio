@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Mayank Digital Labs Logo</title>
+  <desc id="logoDesc">Minimal rounded-square logo with an M monogram.</desc>
+  <rect x="16" y="16" width="224" height="224" rx="54" fill="#1f2c6f" />
+  <path d="M58 186V70h26l44 58 44-58h26v116h-28v-69l-41 54h-2l-41-54v69H58Z" fill="#ffffff" />
+</svg>

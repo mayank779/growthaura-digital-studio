@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { TestimonialsSlider } from "@/components/TestimonialsSlider";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -8,7 +8,7 @@ import { testimonials } from "@/data/testimonials";
 export const metadata: Metadata = {
   title: "Testimonials",
   description:
-    "Read client testimonials and success stories from businesses that scaled with GrowthAura's websites, SEO, and paid ads services."
+    "Read client testimonials and success stories from businesses that scaled with Mayank Digital Labs websites, SEO, and paid ads services."
 };
 
 export default function TestimonialsPage() {
@@ -20,7 +20,7 @@ export default function TestimonialsPage() {
             Testimonials
           </p>
           <h1 className="font-heading text-4xl font-semibold leading-tight sm:text-5xl">
-            What clients say about working with GrowthAura
+            What clients say about working with Mayank Digital Labs
           </h1>
           <p className="mt-5 text-base leading-relaxed text-slate-200 sm:text-lg">
             Specific feedback from founders and teams across real estate, e-commerce, education, and local
@@ -56,3 +56,5 @@ export default function TestimonialsPage() {
     </div>
   );
 }
+
+

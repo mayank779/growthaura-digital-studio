@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -6,7 +6,7 @@ import { homeFaqs } from "@/data/faqs";
 
 export const metadata: Metadata = {
   title: "FAQs",
-  description: "Frequently asked questions about GrowthAura services, pricing, delivery timelines, and support."
+  description: "Frequently asked questions about Mayank Digital Labs services, pricing, delivery timelines, and support."
 };
 
 export default function FAQsPage() {
@@ -23,3 +23,4 @@ export default function FAQsPage() {
     </section>
   );
 }
+

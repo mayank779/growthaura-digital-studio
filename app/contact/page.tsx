@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { FAQAccordion } from "@/components/FAQAccordion";
@@ -10,7 +10,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact GrowthAura Digital Studio to discuss website development, SEO, social media, Google Ads, Meta Ads, and custom digital growth plans."
+    "Contact Mayank Digital Labs to discuss website development, SEO, social media, Google Ads, Meta Ads, and custom digital growth plans."
 };
 
 export default function ContactPage() {
@@ -69,7 +69,7 @@ export default function ContactPage() {
 
             <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft">
               <iframe
-                title="GrowthAura Office Map Placeholder"
+                title="Mayank Digital Labs Office Map Placeholder"
                 src="https://maps.google.com/maps?q=koramangala%20bengaluru&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 className="h-72 w-full border-0"
                 loading="lazy"
@@ -93,3 +93,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

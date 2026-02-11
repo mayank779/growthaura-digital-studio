@@ -1,4 +1,4 @@
-import { Project } from "@/lib/types";
+﻿import { Project } from "@/lib/types";
 
 // Edit portfolio case studies and metrics here.
 export const projects: Project[] = [
@@ -11,7 +11,7 @@ export const projects: Project[] = [
     thumbnail:
       "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=80",
     overview:
-      "GrowthAura rebuilt Zen Estates' digital funnel with intent-driven landing pages and tightly segmented ad campaigns.",
+      "Mayank Digital Labs rebuilt Zen Estates' digital funnel with intent-driven landing pages and tightly segmented ad campaigns.",
     background:
       "Zen Estates sells premium residential projects in Bengaluru and struggled with low-quality inquiries from broad ad targeting.",
     challenges: [
@@ -143,7 +143,7 @@ export const projects: Project[] = [
     thumbnail:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80",
     overview:
-      "GrowthAura built a demand-generation engine combining thought leadership, SEO intent capture, and lead nurture.",
+      "Mayank Digital Labs built a demand-generation engine combining thought leadership, SEO intent capture, and lead nurture.",
     background:
       "FinEdge served enterprise clients but had minimal digital inbound and relied heavily on referrals.",
     challenges: [
@@ -300,3 +300,4 @@ export const projects: Project[] = [
     ]
   }
 ];
+

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="appleTitle appleDesc">
+  <title id="appleTitle">Mayank Digital Labs Apple Icon</title>
+  <desc id="appleDesc">Apple icon with the Mayank Digital Labs mark.</desc>
+  <rect width="180" height="180" rx="40" fill="#ffffff" />
+  <rect x="20" y="20" width="140" height="140" rx="34" fill="#1f2c6f" />
+  <path d="M46 130V50h16l28 36 28-36h16v80h-17V83l-26 33h-2L63 83v47H46Z" fill="#ffffff" />
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 120" role="img" aria-labelledby="wordmarkTitle wordmarkDesc">
+  <title id="wordmarkTitle">Mayank Digital Labs Wordmark</title>
+  <desc id="wordmarkDesc">Simple wordmark with the Mayank Digital Labs logo mark and brand name.</desc>
+  <rect x="0" y="0" width="120" height="120" rx="28" fill="#1f2c6f" />
+  <path d="M21 87V33h12l27 34 27-34h12v54H86V52L61 83h-2L34 52v35H21Z" fill="#ffffff" />
+  <text x="150" y="76" fill="#ffffff" font-family="Sora, Manrope, Arial, sans-serif" font-size="52" font-weight="700" letter-spacing="0.2">
+    Mayank Digital Labs
+  </text>
+</svg>

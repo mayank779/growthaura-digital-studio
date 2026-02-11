@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -7,7 +7,7 @@ import { PrimaryLink } from "@/components/ui/PrimaryLink";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about GrowthAura Digital Studio, our growth-focused process, core values, and expertise in websites, SEO, and paid ads."
+    "Learn about Mayank Digital Labs, our growth-focused process, core values, and expertise in websites, SEO, and paid ads."
 };
 
 const processSteps = [
@@ -77,13 +77,13 @@ export default function AboutPage() {
       <section className="bg-ink-900 pb-16 pt-20 text-white sm:pt-24">
         <Container className="max-w-4xl">
           <p className="mb-4 inline-flex rounded-full border border-brand-300/30 bg-brand-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-brand-200">
-            About GrowthAura
+            About Mayank Digital Labs
           </p>
           <h1 className="font-heading text-4xl font-semibold leading-tight sm:text-5xl">
             We build digital growth engines for ambitious Indian brands
           </h1>
           <p className="mt-5 text-base leading-relaxed text-slate-200 sm:text-lg">
-            GrowthAura Digital Studio was founded by a web developer, SEO strategist, and ads specialist with
+            Mayank Digital Labs was founded by a web developer, SEO strategist, and ads specialist with
             6+ years of experience helping startups, coaches, local businesses, and growth-stage brands scale.
           </p>
         </Container>
@@ -95,7 +95,7 @@ export default function AboutPage() {
             <SectionHeading
               eyebrow="Our Story"
               title="From projects to predictable growth partnerships"
-              description="We started by fixing underperforming websites. Over time, clients needed full-funnel support: SEO, social, paid ads, and lifecycle marketing. Today, GrowthAura combines all of these into one connected execution model."
+              description="We started by fixing underperforming websites. Over time, clients needed full-funnel support: SEO, social, paid ads, and lifecycle marketing. Today, Mayank Digital Labs combines all of these into one connected execution model."
             />
             <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
               Our focus is simple: help businesses grow with strong digital foundations, data-backed decision
@@ -104,7 +104,7 @@ export default function AboutPage() {
           </div>
           <Image
             src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80"
-            alt="GrowthAura team workshop"
+            alt="Mayank Digital Labs team workshop"
             width={1400}
             height={1000}
             className="h-full w-full rounded-3xl border border-slate-200 object-cover"
@@ -153,7 +153,7 @@ export default function AboutPage() {
         <Container>
           <SectionHeading
             eyebrow="Team"
-            title="People behind GrowthAura"
+            title="People behind Mayank Digital Labs"
             description="A focused team covering web, SEO, performance marketing, and creative execution."
           />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -173,7 +173,7 @@ export default function AboutPage() {
       <section className="py-16 sm:py-20">
         <Container className="rounded-3xl border border-slate-200 bg-mist-100 p-8 text-center sm:p-10">
           <h2 className="font-heading text-3xl font-semibold text-ink-900 sm:text-4xl">
-            Ready to work with GrowthAura?
+            Ready to work with Mayank Digital Labs?
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
             Let&apos;s build a growth roadmap for your brand and align channels that drive compounding results.
@@ -186,3 +186,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

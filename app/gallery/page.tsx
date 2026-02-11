@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { GalleryGrid } from "@/components/GalleryGrid";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Browse GrowthAura gallery showcasing website designs, social media creatives, ad campaign snapshots, and branding assets."
+    "Browse Mayank Digital Labs gallery showcasing website designs, social media creatives, ad campaign snapshots, and branding assets."
 };
 
 export default function GalleryPage() {
@@ -22,7 +22,7 @@ export default function GalleryPage() {
           </h1>
           <p className="mt-5 text-base leading-relaxed text-slate-200 sm:text-lg">
             Explore website concepts, social media visuals, ad screenshots, and branding systems built by
-            GrowthAura for modern digital brands.
+            Mayank Digital Labs for modern digital brands.
           </p>
         </Container>
       </section>
@@ -40,3 +40,4 @@ export default function GalleryPage() {
     </div>
   );
 }
+

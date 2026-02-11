@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BarChart3, CheckCircle2, Rocket, ShieldCheck, Target } from "lucide-react";
@@ -21,7 +21,7 @@ import { highlightCards, services } from "@/data/services";
 export const metadata: Metadata = {
   title: "Digital Marketing Agency in India | Websites, SEO, Ads, Social",
   description:
-    "GrowthAura Digital Studio builds conversion-focused websites and ROI-driven SEO, social media, Google Ads, Meta Ads, and email marketing systems for Indian businesses."
+    "Mayank Digital Labs builds conversion-focused websites and ROI-driven SEO, social media, Google Ads, Meta Ads, and email marketing systems for Indian businesses."
 };
 
 const highlightDesigns = [
@@ -105,7 +105,7 @@ export default function HomePage() {
             <div className="relative h-56 overflow-hidden rounded-3xl border border-slate-700/60">
               <Image
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80"
-                alt="GrowthAura digital strategy workspace"
+                alt="Mayank Digital Labs digital strategy workspace"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -120,7 +120,7 @@ export default function HomePage() {
         <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-brand-100/35 to-transparent" />
         <Container className="relative">
           <SectionHeading
-            eyebrow="Why GrowthAura"
+            eyebrow="Why Mayank Digital Labs"
             title="Built for results, not vanity metrics"
             description="Every engagement is designed to move business outcomes: quality leads, stronger conversion rates, and profitable growth."
             align="center"
@@ -229,7 +229,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Testimonials"
             title="Trusted by founders and growth teams"
-            description="Real feedback from clients who scaled leads, conversions, and revenue with GrowthAura."
+            description="Real feedback from clients who scaled leads, conversions, and revenue with Mayank Digital Labs."
           />
           <TestimonialsSlider />
         </Container>
@@ -289,3 +289,4 @@ export default function HomePage() {
     </div>
   );
 }
+

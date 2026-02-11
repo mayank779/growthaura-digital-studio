@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions",
-  description: "Terms and conditions for GrowthAura Digital Studio."
+  description: "Terms and conditions for Mayank Digital Labs."
 };
 
 export default function TermsPage() {
@@ -19,3 +19,4 @@ export default function TermsPage() {
     </section>
   );
 }
+

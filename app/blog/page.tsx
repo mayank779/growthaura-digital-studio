@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "GrowthAura blog placeholder page for future SEO, ads, and digital growth content."
+  description: "Mayank Digital Labs blog placeholder page for future SEO, ads, and digital growth content."
 };
 
 export default function BlogPage() {
@@ -25,3 +25,4 @@ export default function BlogPage() {
     </section>
   );
 }
+

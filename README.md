@@ -1,4 +1,4 @@
-# GrowthAura Digital Studio Website
+﻿# Mayank Digital Labs Website
 
 Production-ready multi-page digital agency website built with Next.js App Router, TypeScript, and Tailwind CSS.
 
@@ -61,3 +61,4 @@ Also included: `/blog`, `/faqs`, `/privacy-policy`, `/terms`, and `sitemap.xml`.
 - All images currently use Unsplash placeholder URLs.
 - Replace `siteConfig.domain` in `data/site.ts` with your real domain.
 - Forms use client-side validation and mock success responses (no backend connected yet).
+
