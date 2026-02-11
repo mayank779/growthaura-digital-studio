@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { CurrencyToggle } from "@/components/currency/CurrencyToggle";
 import { PricingTabs } from "@/components/PricingTabs";
 import { Container } from "@/components/ui/Container";
@@ -98,7 +99,15 @@ export default function PricingPage() {
               </span>
             ))}
           </div>
-          <PricingTabs />
+          <Suspense
+            fallback={
+              <div className="rounded-3xl border border-slate-200 bg-white p-6 text-sm text-slate-500 shadow-soft sm:p-8">
+                Loading pricing categories...
+              </div>
+            }
+          >
+            <PricingTabs />
+          </Suspense>
 
           <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
             <h3 className="text-lg font-semibold text-ink-900">Related internal pages</h3>
