@@ -37,10 +37,16 @@ export const aiAutomationNavItems: NavItem[] = [
   { label: "AI Pricing Plans", href: "/pricing?category=ai-agent-automation" }
 ];
 
-export const designNavItems: NavItem[] = [
-  { label: "Graphic Design", href: "/graphic-design-services" },
-  { label: "UI/UX Design", href: "/ui-ux-design-services" },
-  { label: "Design Pricing", href: "/pricing?category=graphic-design" }
+export const pricingNavItems: NavItem[] = [
+  { label: "All Pricing", href: "/pricing" },
+  { label: "Website Pricing", href: "/pricing?category=website-packages" },
+  { label: "SEO Pricing", href: "/pricing?category=seo-retainers" },
+  { label: "Social Media Pricing", href: "/pricing?category=social-media" },
+  { label: "Ads Management Pricing", href: "/pricing?category=ads-management" },
+  { label: "Email Marketing Pricing", href: "/pricing?category=email-marketing" },
+  { label: "Graphic Design Pricing", href: "/pricing?category=graphic-design" },
+  { label: "UI/UX Design Pricing", href: "/pricing?category=ui-ux-design" },
+  { label: "AI Automation Pricing", href: "/pricing?category=ai-agent-automation" }
 ];
 
 export const footerResources = [

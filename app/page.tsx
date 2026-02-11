@@ -27,10 +27,12 @@ import { PrimaryLink } from "@/components/ui/PrimaryLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { homeFaqs } from "@/data/faqs";
 import { homeAiAutomationPlans, homePricingSummary } from "@/data/home";
+import { pricingSections } from "@/data/pricing";
 import { projects } from "@/data/projects";
 import { internalLinkGroups, seoKeywords } from "@/data/seo";
 import { highlightCards, services } from "@/data/services";
 import { siteConfig } from "@/data/site";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Digital Marketing Agency Worldwide | Websites, SEO, Ads, AI Agents",
@@ -156,6 +158,10 @@ const homeOfferCatalogSchema = {
     )
   }
 };
+
+const designPricingSections = pricingSections.filter(
+  (section) => section.id === "graphic-design" || section.id === "ui-ux-design"
+);
 
 export default function HomePage() {
   return (
@@ -411,6 +417,82 @@ export default function HomePage() {
               Need a custom AI scope? We will map stack, integrations, and QA model before final pricing.
             </p>
             <PrimaryLink href="/pricing?category=ai-agent-automation">View Full AI Pricing</PrimaryLink>
+          </div>
+        </Container>
+      </section>
+
+      <section id="design-pricing" className="relative overflow-hidden bg-white py-16 sm:py-20">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-violet-100/35 to-transparent" />
+        <Container className="relative">
+          <SectionHeading
+            eyebrow="Design + UX"
+            title="Graphic Design and UI/UX Design with complete pricing details"
+            description="Everything below includes package-wise pricing, delivery timeline, and included scope for design services."
+            align="center"
+          />
+          <div className="mb-6 flex justify-center">
+            <div className="text-center">
+              <CurrencyToggle />
+              <p className="mt-2 text-xs text-slate-500">Switch pricing view: USD or INR.</p>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            {designPricingSections.map((section) => (
+              <article key={section.id} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
+                <h3 className="font-heading text-2xl font-semibold text-ink-900 sm:text-3xl">{section.label}</h3>
+                <p className="mt-2 text-sm text-slate-600 sm:text-base">{section.description}</p>
+
+                <div className="mt-6 grid gap-5 lg:grid-cols-3">
+                  {section.plans.map((plan) => (
+                    <article
+                      key={plan.name}
+                      className={cn(
+                        "rounded-3xl border border-slate-200 bg-white p-5 shadow-sm",
+                        plan.featured && "border-brand-300 ring-1 ring-brand-200"
+                      )}
+                    >
+                      {plan.featured ? (
+                        <p className="inline-flex rounded-full border border-brand-200 bg-brand-50 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-700">
+                          Most Popular
+                        </p>
+                      ) : null}
+                      <h4 className="mt-3 text-xl font-semibold text-ink-900">{plan.name}</h4>
+                      <p className="mt-1 text-sm text-slate-600">{plan.audience}</p>
+                      <p className="mt-3 text-base font-semibold text-brand-700">
+                        <PriceText value={plan.price} />
+                      </p>
+                      {plan.timeline ? (
+                        <p className="mt-1 text-xs font-semibold uppercase tracking-[0.08em] text-slate-500">{plan.timeline}</p>
+                      ) : null}
+                      <ul className="mt-4 space-y-2 text-sm text-slate-600">
+                        {plan.points.map((point) => (
+                          <li key={point} className="flex gap-2">
+                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </article>
+                  ))}
+                </div>
+
+                <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <p className="text-sm text-slate-600">{section.note ?? "Custom scope pricing available based on goals and complexity."}</p>
+                  <div className="flex flex-wrap gap-2">
+                    <Link
+                      href={section.id === "graphic-design" ? "/graphic-design-services" : "/ui-ux-design-services"}
+                      className="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-brand-300 hover:text-brand-700"
+                    >
+                      View Service Page
+                    </Link>
+                    <PrimaryLink href={`/pricing?category=${section.id}`} className="px-4 py-2">
+                      View Full Pricing
+                    </PrimaryLink>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </Container>
       </section>
