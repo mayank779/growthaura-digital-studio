@@ -423,10 +423,17 @@ export default function HomePage() {
 
       <section
         id="design-pricing"
-        className="relative overflow-hidden bg-gradient-to-br from-[#f5fbff] via-[#f8fbff] to-[#f4fff6] py-16 sm:py-20"
+        className="relative overflow-hidden bg-gradient-to-br from-[#ddf2ff] via-[#e8e6ff] to-[#ddffe8] py-16 sm:py-20"
       >
-        <div className="pointer-events-none absolute -left-20 top-10 h-64 w-64 rounded-full bg-cyan-200/35 blur-3xl" />
-        <div className="pointer-events-none absolute -right-16 bottom-0 h-72 w-72 rounded-full bg-emerald-200/35 blur-3xl" />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle at 8% 20%, rgba(34,211,238,0.28), transparent 34%), radial-gradient(circle at 82% 24%, rgba(99,102,241,0.26), transparent 36%), radial-gradient(circle at 55% 85%, rgba(16,185,129,0.24), transparent 40%)"
+          }}
+        />
+        <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-cyan-300/35 blur-3xl" />
+        <div className="pointer-events-none absolute -right-16 bottom-0 h-80 w-80 rounded-full bg-emerald-300/35 blur-3xl" />
         <Container className="relative">
           <SectionHeading
             eyebrow="Design + UX"
@@ -448,8 +455,8 @@ export default function HomePage() {
                 className={cn(
                   "group relative overflow-hidden rounded-3xl border p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(15,23,42,0.14)] sm:p-8",
                   section.id === "graphic-design"
-                    ? "border-cyan-100 bg-gradient-to-br from-cyan-50/70 via-white to-blue-50/70"
-                    : "border-emerald-100 bg-gradient-to-br from-emerald-50/70 via-white to-lime-50/70"
+                    ? "border-cyan-200/70 bg-gradient-to-br from-cyan-100/80 via-[#f4fbff] to-blue-100/75"
+                    : "border-emerald-200/70 bg-gradient-to-br from-emerald-100/80 via-[#f7fffb] to-lime-100/75"
                 )}
               >
                 <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-400 via-brand-500 to-emerald-400" />
@@ -461,9 +468,9 @@ export default function HomePage() {
                     <article
                       key={plan.name}
                       className={cn(
-                        "rounded-3xl border bg-white/90 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-[0_18px_35px_rgba(30,41,59,0.16)]",
+                        "rounded-3xl border bg-gradient-to-br from-white/80 via-white/70 to-white/50 p-5 shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-brand-300 hover:from-white/95 hover:to-brand-50/40 hover:shadow-[0_18px_35px_rgba(30,41,59,0.16)]",
                         plan.featured
-                          ? "border-brand-300 bg-gradient-to-br from-brand-50/45 to-white ring-1 ring-brand-200"
+                          ? "border-brand-300 bg-gradient-to-br from-brand-100/70 via-white/85 to-violet-100/45 ring-1 ring-brand-200"
                           : "border-slate-200"
                       )}
                     >
@@ -492,7 +499,7 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white/75 p-4 backdrop-blur-sm">
+                <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-gradient-to-r from-white/65 via-cyan-50/55 to-emerald-50/55 p-4 backdrop-blur-sm">
                   <p className="text-sm text-slate-600">{section.note ?? "Custom scope pricing available based on goals and complexity."}</p>
                   <div className="flex flex-wrap gap-2">
                     <Link
