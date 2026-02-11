@@ -13,9 +13,9 @@ export const homeFaqs: FAQItem[] = [
       "Most retainers run on a 3-month initial commitment so we can build, test, and optimize effectively. Project-based work has fixed milestones."
   },
   {
-    question: "Do you work only with Indian businesses?",
+    question: "Do you work with businesses worldwide?",
     answer:
-      "Our primary focus is India-based SMEs, startups, and growth-stage brands, but we also support global companies targeting Indian audiences."
+      "Yes. We work with startups, SMEs, and growth-stage brands across multiple regions and time zones."
   },
   {
     question: "What do you need from clients to begin?",

@@ -32,7 +32,7 @@ export function NewsletterForm() {
       <div className="mb-4">
         <h3 className="text-2xl font-semibold text-ink-900">Get weekly growth playbooks</h3>
         <p className="mt-2 text-sm text-slate-600">
-          Actionable SEO insights, paid ads strategies, and practical growth tips for Indian businesses.
+          Actionable SEO insights, paid ads strategies, and practical growth tips for global businesses.
         </p>
       </div>
       <form onSubmit={onSubmit} className="grid gap-3 sm:grid-cols-[1fr_1fr_auto]">

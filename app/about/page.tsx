@@ -1,5 +1,7 @@
 ﻿import type { Metadata } from "next";
 import Image from "next/image";
+import { seoKeywords } from "@/data/seo";
+import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PrimaryLink } from "@/components/ui/PrimaryLink";
@@ -7,7 +9,18 @@ import { PrimaryLink } from "@/components/ui/PrimaryLink";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Mayank Digital Labs, our growth-focused process, core values, and expertise in websites, SEO, and paid ads."
+    "Learn about Mayank Digital Labs, our global growth-focused process, core values, and expertise in websites, SEO, paid ads, and AI automation.",
+  keywords: [...seoKeywords.about],
+  alternates: {
+    canonical: "/about"
+  },
+  openGraph: {
+    title: "About | Mayank Digital Labs",
+    description:
+      "Meet the team, process, and values behind website growth, SEO, ads, and automation delivery worldwide.",
+    url: `${siteConfig.domain}/about`,
+    type: "website"
+  }
 };
 
 const processSteps = [
@@ -80,7 +93,7 @@ export default function AboutPage() {
             About Mayank Digital Labs
           </p>
           <h1 className="font-heading text-4xl font-semibold leading-tight sm:text-5xl">
-            We build digital growth engines for ambitious Indian brands
+            We build digital growth engines for ambitious brands worldwide
           </h1>
           <p className="mt-5 text-base leading-relaxed text-slate-200 sm:text-lg">
             Mayank Digital Labs was founded by a web developer, SEO strategist, and ads specialist with
@@ -107,6 +120,8 @@ export default function AboutPage() {
             alt="Mayank Digital Labs team workshop"
             width={1400}
             height={1000}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={72}
             className="h-full w-full rounded-3xl border border-slate-200 object-cover"
           />
         </Container>
@@ -160,7 +175,14 @@ export default function AboutPage() {
             {team.map((member) => (
               <article key={member.name} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
                 <div className="relative h-60 overflow-hidden rounded-xl">
-                  <Image src={member.image} alt={member.name} fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover" />
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                    quality={70}
+                    className="object-cover"
+                  />
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-ink-900">{member.name}</h3>
                 <p className="text-sm text-slate-600">{member.role}</p>

@@ -2,7 +2,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
+import { CurrencyToggle } from "@/components/currency/CurrencyToggle";
+import { PriceText } from "@/components/currency/PriceText";
 import { detailedServices } from "@/data/services";
+import { internalLinkGroups, seoKeywords } from "@/data/seo";
+import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PrimaryLink } from "@/components/ui/PrimaryLink";
@@ -11,7 +15,18 @@ import { IconResolver } from "@/components/IconResolver";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Website development, SEO, social media marketing, Google Ads, Meta Ads, email marketing, and branding services for Indian businesses."
+    "Website development, SEO, social media marketing, Google Ads, Meta Ads, email marketing, branding, and AI-ready growth services for businesses worldwide.",
+  keywords: [...seoKeywords.services],
+  alternates: {
+    canonical: "/services"
+  },
+  openGraph: {
+    title: "Services | Mayank Digital Labs",
+    description:
+      "Explore website, SEO, paid media, lifecycle marketing, and creative services built for global growth goals.",
+    url: `${siteConfig.domain}/services`,
+    type: "website"
+  }
 };
 
 const serviceImages = [
@@ -36,8 +51,22 @@ export default function ServicesPage() {
           </h1>
           <p className="mt-5 text-base leading-relaxed text-slate-200 sm:text-lg">
             We combine web development, SEO, social media, performance ads, email marketing, and creative
-            execution to build predictable growth systems for Indian businesses.
+            execution to build predictable growth systems for businesses worldwide.
           </p>
+          <div className="mt-4">
+            <CurrencyToggle />
+            <p className="mt-2 text-xs text-slate-300">Switch pricing notes between USD, INR, or both.</p>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {seoKeywords.services.map((keyword) => (
+              <span
+                key={keyword}
+                className="rounded-full border border-slate-500/70 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200"
+              >
+                {keyword}
+              </span>
+            ))}
+          </div>
         </Container>
       </section>
 
@@ -56,7 +85,9 @@ export default function ServicesPage() {
                 </span>
                 <h2 className="mt-4 font-heading text-3xl font-semibold text-ink-900">{service.title}</h2>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">{service.shortDescription}</p>
-                <p className="mt-4 text-base font-semibold text-brand-700">{service.pricingNote}</p>
+                <p className="mt-4 text-base font-semibold text-brand-700">
+                  <PriceText value={service.pricingNote} />
+                </p>
                 <ul className="mt-5 space-y-2 text-sm text-slate-600">
                   {service.includeList.map((point) => (
                     <li key={point} className="flex gap-2">
@@ -75,11 +106,34 @@ export default function ServicesPage() {
                   alt={`${service.title} service illustration`}
                   width={1400}
                   height={1000}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={72}
                   className="h-full w-full rounded-2xl border border-slate-200 object-cover"
                 />
               </div>
             </article>
           ))}
+        </Container>
+      </section>
+
+      <section className="py-10 sm:py-14">
+        <Container>
+          <SectionHeading
+            eyebrow="Explore Next"
+            title="Connect services with pricing, proof, and booking"
+            description="Use these internal paths to compare options, validate fit, and move to execution quickly."
+          />
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {internalLinkGroups.services.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:border-brand-300 hover:text-brand-700"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </Container>
       </section>
 

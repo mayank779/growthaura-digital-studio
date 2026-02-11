@@ -56,7 +56,14 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
       <section className="py-16 sm:py-20">
         <Container className="space-y-10">
           <div className="relative h-[420px] overflow-hidden rounded-3xl border border-slate-200">
-            <Image src={project.thumbnail} alt={`${project.name} hero visual`} fill sizes="100vw" className="object-cover" />
+            <Image
+              src={project.thumbnail}
+              alt={`${project.name} hero visual`}
+              fill
+              sizes="100vw"
+              quality={74}
+              className="object-cover"
+            />
           </div>
 
           <div className="grid gap-8 lg:grid-cols-2">
@@ -110,6 +117,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                     alt={`${project.name} screenshot`}
                     fill
                     sizes="(max-width: 640px) 100vw, 33vw"
+                    quality={72}
                     className="object-cover"
                   />
                 </div>

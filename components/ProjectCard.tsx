@@ -16,6 +16,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           alt={`${project.name} project thumbnail`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          quality={72}
           className="object-cover transition duration-500 group-hover:scale-105"
         />
       </div>

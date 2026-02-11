@@ -1,7 +1,17 @@
 ﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BarChart3, CheckCircle2, Rocket, ShieldCheck, Target } from "lucide-react";
+import {
+  ArrowRight,
+  BarChart3,
+  Bot,
+  CheckCircle2,
+  Rocket,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  Workflow
+} from "lucide-react";
 import { HeroSlider } from "@/components/HeroSlider";
 import { ServiceCard } from "@/components/ServiceCard";
 import { PricingCard } from "@/components/PricingCard";
@@ -10,18 +20,48 @@ import { TestimonialsSlider } from "@/components/TestimonialsSlider";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
+import { CurrencyToggle } from "@/components/currency/CurrencyToggle";
+import { PriceText } from "@/components/currency/PriceText";
 import { Container } from "@/components/ui/Container";
 import { PrimaryLink } from "@/components/ui/PrimaryLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { homeFaqs } from "@/data/faqs";
-import { homePricingSummary } from "@/data/home";
+import { homeAiAutomationPlans, homePricingSummary } from "@/data/home";
 import { projects } from "@/data/projects";
+import { internalLinkGroups, seoKeywords } from "@/data/seo";
 import { highlightCards, services } from "@/data/services";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Agency in India | Websites, SEO, Ads, Social",
+  title: "Digital Marketing Agency Worldwide | Websites, SEO, Ads, AI Agents",
   description:
-    "Mayank Digital Labs builds conversion-focused websites and ROI-driven SEO, social media, Google Ads, Meta Ads, and email marketing systems for Indian businesses."
+    "Mayank Digital Labs builds conversion-focused websites, SEO, social media, ads, email funnels, and AI agent automation systems for businesses worldwide.",
+  alternates: {
+    canonical: "/"
+  },
+  keywords: [...seoKeywords.home],
+  openGraph: {
+    title: "Mayank Digital Labs | Websites, SEO, Ads, AI Agents",
+    description:
+      "Conversion-focused websites, SEO, paid media, and AI agent automation built for measurable business growth.",
+    url: siteConfig.domain,
+    type: "website",
+    images: [
+      {
+        url: "/icon-512.png",
+        width: 512,
+        height: 512,
+        alt: "Mayank Digital Labs"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mayank Digital Labs | Growth + AI Automation",
+    description:
+      "Scale with conversion-first websites, SEO, ads, and AI workflow automation built for global businesses.",
+    images: ["/icon-512.png"]
+  }
 };
 
 const highlightDesigns = [
@@ -52,16 +92,80 @@ const highlightDesigns = [
   {
     icon: Rocket,
     label: "Growth Partner",
-    metric: "Built for Indian startups",
+    metric: "Built for global growth teams",
     card: "from-amber-100/70 via-white to-orange-50/70",
     iconWrap: "from-amber-500 to-orange-500",
     glow: "bg-amber-300/45"
   }
 ];
 
+const aiPlanDesigns = [
+  {
+    icon: Bot,
+    surface: "from-slate-900 via-[#0b1f47] to-[#12255f]",
+    ring: "ring-brand-300/40",
+    iconWrap: "from-brand-500 to-blue-500"
+  },
+  {
+    icon: Workflow,
+    surface: "from-slate-900 via-[#16234a] to-[#23356a]",
+    ring: "ring-cyan-300/45",
+    iconWrap: "from-cyan-500 to-blue-500"
+  },
+  {
+    icon: Sparkles,
+    surface: "from-slate-900 via-[#231f51] to-[#2e2b73]",
+    ring: "ring-violet-300/45",
+    iconWrap: "from-violet-500 to-brand-500"
+  }
+];
+
+const homeFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer
+    }
+  }))
+};
+
+const homeOfferCatalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Digital Growth and AI Agent Automation Services",
+  serviceType: "Website development, performance marketing, and AI automation",
+  provider: {
+    "@type": "Organization",
+    name: siteConfig.brandName,
+    url: siteConfig.domain
+  },
+  areaServed: "Worldwide",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Growth and AI service packages",
+    itemListElement: [...homePricingSummary.map((plan) => plan.name), ...homeAiAutomationPlans.map((plan) => plan.name)].map(
+      (name, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name
+      })
+    )
+  }
+};
+
 export default function HomePage() {
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeOfferCatalogSchema) }}
+      />
+
       <section className="relative overflow-hidden bg-ink-900 text-white">
         <div className="absolute inset-0 bg-hero-grid" />
         <Container className="relative grid gap-10 pb-20 pt-20 lg:grid-cols-2 lg:items-center lg:pb-28 lg:pt-24">
@@ -73,7 +177,7 @@ export default function HomePage() {
               Growth-Focused Websites & Ads for Ambitious Brands
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-200 sm:text-lg">
-              We help Indian businesses scale with website development, SEO, Instagram & LinkedIn marketing,
+              We help businesses worldwide scale with website development, SEO, Instagram & LinkedIn marketing,
               Google & Meta ads, and lifecycle email campaigns.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -90,7 +194,7 @@ export default function HomePage() {
                 "Conversion-led website architecture",
                 "Performance-focused paid media",
                 "Transparent weekly updates",
-                "Specialized for Indian startups and SMEs"
+                "Specialized for startups and SMEs worldwide"
               ].map((point) => (
                 <li key={point} className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-brand-300" />
@@ -109,6 +213,7 @@ export default function HomePage() {
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={72}
                 className="object-cover"
               />
             </div>
@@ -178,14 +283,35 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <Container>
+      <section className="relative overflow-hidden py-16 sm:py-20">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-brand-100/40 to-transparent" />
+        <div className="pointer-events-none absolute -right-24 top-28 h-64 w-64 rounded-full bg-cyan-200/35 blur-3xl" />
+        <Container className="relative">
           <SectionHeading
             eyebrow="Pricing Overview"
             title="Plans for every stage of growth"
-            description="Transparent INR pricing with clear deliverables. Customize any plan based on your goals."
+            description="Transparent pricing with clear deliverables. Multi-currency billing options are available."
             align="center"
           />
+          <div className="mb-5 flex justify-center">
+            <div className="text-center">
+              <CurrencyToggle />
+              <p className="mt-2 text-xs text-slate-500">Switch pricing view: USD, INR, or both.</p>
+            </div>
+          </div>
+          <div className="mb-8 grid gap-3 sm:grid-cols-3">
+            {["Free strategy consultation", "No hidden charges", "Outcome-driven deliverables"].map(
+              (point) => (
+                <div
+                  key={point}
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-3 text-sm font-medium text-slate-700 shadow-sm"
+                >
+                  <CheckCircle2 className="h-4 w-4 text-brand-600" />
+                  {point}
+                </div>
+              )
+            )}
+          </div>
           <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-4">
             {homePricingSummary.map((plan) => (
               <PricingCard
@@ -196,6 +322,139 @@ export default function HomePage() {
                 }}
                 href="/pricing"
               />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section id="ai-agent-automation" className="relative overflow-hidden bg-ink-900 py-16 text-white sm:py-20">
+        <div className="pointer-events-none absolute inset-0 bg-hero-grid opacity-80" />
+        <div className="pointer-events-none absolute -left-16 top-10 h-60 w-60 rounded-full bg-brand-500/25 blur-3xl" />
+        <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl" />
+
+        <Container className="relative">
+          <p className="mb-4 inline-flex rounded-full border border-brand-300/35 bg-brand-400/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-brand-200">
+            AI Agent Automation
+          </p>
+          <h2 className="font-heading text-3xl font-semibold leading-tight text-white sm:text-4xl">
+            Modern AI Agent Packages for sales, support, and operations
+          </h2>
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-200 sm:text-base">
+            Benchmark-aligned with current agency pricing ranges in 2026. Build AI agents that qualify leads,
+            automate follow-ups, sync CRM workflows, and improve team response speed.
+          </p>
+
+          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            {homeAiAutomationPlans.map((plan, index) => {
+              const design = aiPlanDesigns[index % aiPlanDesigns.length];
+              const Icon = design.icon;
+
+              return (
+                <article
+                  key={plan.name}
+                  className={`relative overflow-hidden rounded-3xl border border-slate-700/80 bg-gradient-to-br ${design.surface} p-6 shadow-[0_14px_40px_rgba(5,9,24,0.4)] ring-1 ${design.ring} backdrop-blur`}
+                >
+                  <div className="pointer-events-none absolute -right-8 -top-10 h-24 w-24 rounded-full bg-white/10 blur-2xl" />
+
+                  <div className="relative">
+                    <div className="mb-4 flex items-center justify-between gap-3">
+                      <span className="inline-flex rounded-full border border-white/25 bg-white/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-white">
+                        {plan.badge}
+                      </span>
+                      <span
+                        className={`inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br text-white ${design.iconWrap}`}
+                      >
+                        <Icon className="h-5 w-5" />
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-white">{plan.name}</h3>
+                    <p className="mt-2 text-sm text-slate-200">{plan.audience}</p>
+                    <p className="mt-4 text-base font-semibold text-white">
+                      <PriceText value={plan.setup} />
+                    </p>
+                    <p className="mt-1 text-sm text-brand-100">
+                      <PriceText value={plan.support} />
+                    </p>
+                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.08em] text-slate-300">{plan.timeline}</p>
+                    <ul className="mt-4 space-y-2 text-sm text-slate-200">
+                      {plan.points.map((point) => (
+                        <li key={point} className="flex gap-2">
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-300" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                label: "AI Agent Automation Services",
+                href: "/ai-agent-automation-services",
+                description: "Full AI service scope, deliverables, and implementation steps."
+              },
+              {
+                label: "AI Chatbot + CRM Automation",
+                href: "/ai-chatbot-crm-automation",
+                description: "Chatbot workflows connected to CRM pipeline automation."
+              },
+              {
+                label: "AI Lead Follow-Up Automation",
+                href: "/ai-lead-qualification-follow-up-automation",
+                description: "Lead scoring, nurture sequences, and conversion-focused follow-ups."
+              }
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-2xl border border-slate-700/80 bg-slate-900/60 p-4 shadow-sm transition hover:border-brand-300/70 hover:bg-slate-900"
+              >
+                <p className="text-sm font-semibold text-white">{item.label}</p>
+                <p className="mt-1 text-sm text-slate-300">{item.description}</p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-slate-700/70 bg-slate-900/55 p-4">
+            <p className="text-sm text-slate-200">
+              Need a custom AI scope? We will map stack, integrations, and QA model before final pricing.
+            </p>
+            <PrimaryLink href="/pricing?category=ai-agent-automation">View Full AI Pricing</PrimaryLink>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-14 sm:py-16">
+        <Container>
+          <SectionHeading
+            eyebrow="SEO Navigation"
+            title="Explore core growth paths"
+            description="These internal links are grouped to help visitors and search engines discover your key commercial pages."
+          />
+          <div className="mb-5 flex flex-wrap gap-2">
+            {seoKeywords.home.map((keyword) => (
+              <span
+                key={keyword}
+                className="rounded-full border border-slate-200 bg-slate-50/80 px-3 py-1 text-xs font-medium text-slate-600"
+              >
+                {keyword}
+              </span>
+            ))}
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {internalLinkGroups.home.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md"
+              >
+                <p className="text-sm font-semibold text-ink-900">{item.label}</p>
+                <p className="mt-1 text-sm text-slate-600">{item.description}</p>
+              </Link>
             ))}
           </div>
         </Container>
@@ -224,8 +483,10 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section id="testimonials" className="py-16 sm:py-20">
-        <Container>
+      <section id="testimonials" className="relative overflow-hidden py-16 sm:py-20">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/20 via-brand-50/35 to-white/10" />
+        <div className="pointer-events-none absolute left-12 top-12 h-52 w-52 rounded-full bg-brand-200/30 blur-3xl" />
+        <Container className="relative">
           <SectionHeading
             eyebrow="Testimonials"
             title="Trusted by founders and growth teams"
@@ -259,6 +520,8 @@ export default function HomePage() {
               alt="Growth strategy discussion"
               width={1200}
               height={900}
+              sizes="(max-width: 1280px) 100vw, 40vw"
+              quality={72}
               className="h-auto w-full rounded-3xl border border-slate-200 object-cover shadow-sm"
             />
           </div>

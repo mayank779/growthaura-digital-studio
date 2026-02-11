@@ -9,8 +9,8 @@ export const services: Service[] = [
       "High-performance websites built to turn visitors into qualified leads and sales conversations.",
     outcome: "Faster pages, stronger trust, and better lead conversion rates.",
     icon: "Laptop",
-    startingPrice: "₹24,999",
-    pricingNote: "Starting at ₹24,999/project",
+    startingPrice: "USD $300 | INR 24,999",
+    pricingNote: "Starting at USD $300/project | INR 24,999/project",
     includeList: [
       "UI/UX wireframes and custom visual design",
       "Responsive development for desktop, tablet, and mobile",
@@ -26,8 +26,8 @@ export const services: Service[] = [
       "End-to-end SEO covering technical fixes, on-page optimization, content planning, and authority building.",
     outcome: "Sustainable organic traffic and higher-intent inbound leads.",
     icon: "LineChart",
-    startingPrice: "₹9,999/month",
-    pricingNote: "Starting at ₹9,999/month",
+    startingPrice: "USD $120/month | INR 9,999/month",
+    pricingNote: "Starting at USD $120/month | INR 9,999/month",
     includeList: [
       "Keyword research and keyword-to-page mapping",
       "On-page SEO for service pages and blogs",
@@ -43,8 +43,8 @@ export const services: Service[] = [
       "Brand-led social media strategy, content calendars, and post execution designed for reach and engagement.",
     outcome: "Stronger brand authority and consistent audience growth.",
     icon: "Megaphone",
-    startingPrice: "₹7,999/month",
-    pricingNote: "Starting at ₹7,999/month",
+    startingPrice: "USD $95/month | INR 7,999/month",
+    pricingNote: "Starting at USD $95/month | INR 7,999/month",
     includeList: [
       "Monthly content themes and publishing plan",
       "Reels/carousel strategy with branded creatives",
@@ -60,8 +60,8 @@ export const services: Service[] = [
       "Performance marketing campaigns optimized for lower CPA, stronger ROAS, and predictable lead flow.",
     outcome: "Faster pipeline growth using data-backed campaign optimization.",
     icon: "Target",
-    startingPrice: "₹9,999/month",
-    pricingNote: "Management fee starts at ₹9,999/month",
+    startingPrice: "USD $120/month | INR 9,999/month",
+    pricingNote: "Management fee starts at USD $120/month | INR 9,999/month",
     includeList: [
       "Campaign architecture and pixel/tracking setup",
       "Keyword and audience research",
@@ -77,8 +77,8 @@ export const services: Service[] = [
       "Lifecycle email systems that nurture leads, re-activate dormant users, and improve repeat purchases.",
     outcome: "Higher customer retention and measurable revenue from email.",
     icon: "Mail",
-    startingPrice: "₹6,999/month",
-    pricingNote: "Starting at ₹6,999/month",
+    startingPrice: "USD $85/month | INR 6,999/month",
+    pricingNote: "Starting at USD $85/month | INR 6,999/month",
     includeList: [
       "Campaign calendar and segmented list strategy",
       "Template design and persuasive copywriting",
@@ -94,8 +94,8 @@ export const services: Service[] = [
       "Cohesive brand identity and creative assets that make your business memorable across platforms.",
     outcome: "Premium visual consistency that improves trust and recall.",
     icon: "Palette",
-    startingPrice: "₹14,999/project",
-    pricingNote: "Starting at ₹14,999/project",
+    startingPrice: "USD $180/project | INR 14,999/project",
+    pricingNote: "Starting at USD $180/project | INR 14,999/project",
     includeList: [
       "Logo refinement and brand direction",
       "Color, typography, and visual guidelines",
@@ -118,8 +118,8 @@ export const detailedServices: Service[] = [
       "Intent-driven search campaigns optimized to capture demand and convert clicks into qualified leads.",
     outcome: "Lower CPL and higher lead intent from search traffic.",
     icon: "Target",
-    startingPrice: "₹9,999/month",
-    pricingNote: "Management fee starts at ₹9,999/month",
+    startingPrice: "USD $120/month | INR 9,999/month",
+    pricingNote: "Management fee starts at USD $120/month | INR 9,999/month",
     includeList: [
       "Keyword and search intent research",
       "Campaign/ad group architecture setup",
@@ -135,8 +135,8 @@ export const detailedServices: Service[] = [
       "Audience-first Meta campaigns for awareness, retargeting, and lead/sales performance.",
     outcome: "Stronger funnel performance with creative-led testing.",
     icon: "Target",
-    startingPrice: "₹9,999/month",
-    pricingNote: "Management fee starts at ₹9,999/month",
+    startingPrice: "USD $120/month | INR 9,999/month",
+    pricingNote: "Management fee starts at USD $120/month | INR 9,999/month",
     includeList: [
       "Audience research and funnel mapping",
       "Campaign setup across placements and objectives",
@@ -153,8 +153,8 @@ export const detailedServices: Service[] = [
       "Cohesive brand direction and campaign creative systems that improve trust and brand recall.",
     outcome: "Premium visual consistency that drives stronger perception and response.",
     icon: "Palette",
-    startingPrice: "₹14,999/project",
-    pricingNote: "Starting at ₹14,999/project",
+    startingPrice: "USD $180/project | INR 14,999/project",
+    pricingNote: "Starting at USD $180/project | INR 14,999/project",
     includeList: services[5].includeList
   }
 ];
@@ -176,8 +176,8 @@ export const highlightCards = [
       "You receive structured weekly updates and plain-language monthly reports with clear next steps."
   },
   {
-    title: "Specialized in Indian SMEs & Startups",
+    title: "Specialized in Global Startups & Growth Teams",
     description:
-      "Our strategy blends local market insight with global best practices for sustainable growth."
+      "Our strategy blends market-specific insight with global best practices for sustainable growth."
   }
 ];

@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { navItems, siteConfig } from "@/data/site";
+import { aiAutomationNavItems, navItems, siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PrimaryLink } from "@/components/ui/PrimaryLink";
@@ -12,7 +12,16 @@ import { PrimaryLink } from "@/components/ui/PrimaryLink";
 export function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDesktopAIOpen, setIsDesktopAIOpen] = useState(false);
+  const [isMobileAIOpen, setIsMobileAIOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+
+  const isLinkActive = (href: string) => {
+    const path = href.split("?")[0] ?? href;
+    return path === "/" ? pathname === "/" : pathname === path || pathname.startsWith(`${path}/`);
+  };
+
+  const isAIDropdownActive = aiAutomationNavItems.some((item) => isLinkActive(item.href));
 
   useEffect(() => {
     const onScroll = () => setHasScrolled(window.scrollY > 10);
@@ -23,6 +32,8 @@ export function Header() {
 
   useEffect(() => {
     setIsMenuOpen(false);
+    setIsDesktopAIOpen(false);
+    setIsMobileAIOpen(false);
   }, [pathname]);
 
   return (
@@ -39,26 +50,91 @@ export function Header() {
           <BrandLogo />
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex">
-          {navItems.map((item) => {
-            const active =
-              item.href === "/" ? pathname === "/" : pathname === item.href || pathname.startsWith(`${item.href}/`);
-            return (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={cn(
-                  "text-sm font-medium transition",
-                  active ? "text-white" : "text-slate-300 hover:text-white"
-                )}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+        <nav className="hidden items-center gap-4 lg:flex">
+          {navItems.slice(0, 2).map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className={cn(
+                "text-sm font-medium transition",
+                isLinkActive(item.href) ? "text-white" : "text-slate-300 hover:text-white"
+              )}
+            >
+              {item.label}
+            </Link>
+          ))}
+
+          <div
+            className="relative"
+            onMouseEnter={() => setIsDesktopAIOpen(true)}
+            onMouseLeave={() => setIsDesktopAIOpen(false)}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                setIsDesktopAIOpen(false);
+              }
+            }}
+          >
+            <button
+              type="button"
+              onClick={() => setIsDesktopAIOpen((prev) => !prev)}
+              className={cn(
+                "inline-flex items-center gap-1.5 text-sm font-medium transition",
+                isAIDropdownActive || isDesktopAIOpen ? "text-white" : "text-slate-300 hover:text-white"
+              )}
+              aria-haspopup="menu"
+              aria-expanded={isDesktopAIOpen}
+              aria-label="Open AI Automation menu"
+            >
+              AI Automation
+              <ChevronDown className={cn("h-4 w-4 transition", isDesktopAIOpen && "rotate-180")} />
+            </button>
+
+            <div
+              className={cn(
+                "absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 rounded-2xl border border-slate-700 bg-ink-900/95 p-2 shadow-xl backdrop-blur-md transition",
+                isDesktopAIOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
+              )}
+              role="menu"
+            >
+              <p className="px-2 pb-2 pt-1 text-[11px] font-semibold uppercase tracking-[0.11em] text-slate-400">
+                AI Solutions
+              </p>
+              <div className="grid gap-1">
+                {aiAutomationNavItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    role="menuitem"
+                    onClick={() => setIsDesktopAIOpen(false)}
+                    className={cn(
+                      "rounded-xl px-3 py-2.5 text-sm transition",
+                      isLinkActive(item.href)
+                        ? "bg-slate-800 text-white"
+                        : "text-slate-300 hover:bg-slate-800/80 hover:text-white"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {navItems.slice(2).map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className={cn(
+                "text-sm font-medium transition",
+                isLinkActive(item.href) ? "text-white" : "text-slate-300 hover:text-white"
+              )}
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <PrimaryLink href="/contact">Get Free Growth Plan</PrimaryLink>
         </div>
 
@@ -76,24 +152,79 @@ export function Header() {
         <div className="lg:hidden">
           <div className="border-t border-slate-700 bg-ink-900 px-4 pb-6 pt-4 sm:px-6">
             <nav className="grid gap-2">
-              {navItems.map((item) => {
-                const active =
-                  item.href === "/" ? pathname === "/" : pathname === item.href || pathname.startsWith(`${item.href}/`);
-                return (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className={cn(
-                      "rounded-xl px-4 py-3 text-sm font-medium transition",
-                      active
-                        ? "bg-slate-800 text-white"
-                        : "text-slate-300 hover:bg-slate-800/70 hover:text-white"
-                    )}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
+              {navItems.slice(0, 2).map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={cn(
+                    "rounded-xl px-4 py-3 text-sm font-medium transition",
+                    isLinkActive(item.href)
+                      ? "bg-slate-800 text-white"
+                      : "text-slate-300 hover:bg-slate-800/70 hover:text-white"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              ))}
+
+              <div className="rounded-xl border border-slate-700/80 bg-slate-900/60">
+                <button
+                  type="button"
+                  onClick={() => setIsMobileAIOpen((prev) => !prev)}
+                  className={cn(
+                    "flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition",
+                    isAIDropdownActive || isMobileAIOpen
+                      ? "bg-slate-800 text-white"
+                      : "text-slate-300 hover:bg-slate-800/70 hover:text-white"
+                  )}
+                  aria-expanded={isMobileAIOpen}
+                  aria-label="Toggle AI Automation links"
+                >
+                  <span>AI Automation</span>
+                  <ChevronDown className={cn("h-4 w-4 transition", isMobileAIOpen && "rotate-180")} />
+                </button>
+                <div className={cn("grid transition-all", isMobileAIOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
+                  <div className="overflow-hidden">
+                    <div className="grid gap-1 px-2 pb-2">
+                      {aiAutomationNavItems.map((item) => (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            setIsMobileAIOpen(false);
+                          }}
+                          className={cn(
+                            "rounded-lg px-3 py-2 text-sm transition",
+                            isLinkActive(item.href)
+                              ? "bg-slate-800 text-white"
+                              : "text-slate-300 hover:bg-slate-800/70 hover:text-white"
+                          )}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {navItems.slice(2).map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={cn(
+                    "rounded-xl px-4 py-3 text-sm font-medium transition",
+                    isLinkActive(item.href)
+                      ? "bg-slate-800 text-white"
+                      : "text-slate-300 hover:bg-slate-800/70 hover:text-white"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </nav>
             <PrimaryLink href="/contact" className="mt-4 w-full">
               Get Free Growth Plan

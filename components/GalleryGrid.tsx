@@ -60,6 +60,7 @@ export function GalleryGrid() {
                 alt={item.title}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={72}
                 className="object-cover transition duration-500 group-hover:scale-105"
               />
             </div>
@@ -86,7 +87,14 @@ export function GalleryGrid() {
             </div>
             <article className="overflow-hidden rounded-2xl bg-white shadow-soft">
               <div className="relative h-[48vh] min-h-[280px]">
-                <Image src={selectedItem.image} alt={selectedItem.title} fill sizes="100vw" className="object-cover" />
+                <Image
+                  src={selectedItem.image}
+                  alt={selectedItem.title}
+                  fill
+                  sizes="100vw"
+                  quality={75}
+                  className="object-cover"
+                />
               </div>
               <div className="space-y-2 p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.1em] text-brand-700">{selectedItem.category}</p>

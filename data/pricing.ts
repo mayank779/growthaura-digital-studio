@@ -10,7 +10,7 @@ export const pricingSections: PricingSection[] = [
       {
         name: "Starter Landing Page",
         audience: "Ideal for founders validating offers",
-        price: "₹7,999 - ₹14,999",
+        price: "USD $95 - $180 | INR 7,999 - 14,999",
         timeline: "Timeline: 5-8 working days",
         points: [
           "Single conversion-focused page",
@@ -24,7 +24,7 @@ export const pricingSections: PricingSection[] = [
       {
         name: "Business Website (5-7 pages)",
         audience: "For service businesses and growing brands",
-        price: "₹24,999 - ₹39,999",
+        price: "USD $300 - $480 | INR 24,999 - 39,999",
         timeline: "Timeline: 2-4 weeks",
         featured: true,
         points: [
@@ -39,7 +39,7 @@ export const pricingSections: PricingSection[] = [
       {
         name: "E-Commerce Website",
         audience: "For brands ready to sell online",
-        price: "Starting from ₹59,999+",
+        price: "Starting from USD $720+ | INR 59,999+",
         timeline: "Timeline: 4-8 weeks",
         points: [
           "Product catalog with category architecture",
@@ -61,7 +61,7 @@ export const pricingSections: PricingSection[] = [
       {
         name: "SEO Starter",
         audience: "Local and small businesses",
-        price: "₹9,999/month",
+        price: "USD $120/month | INR 9,999/month",
         points: [
           "SEO audit + implementation checklist",
           "5-10 priority keyword tracking",
@@ -74,7 +74,7 @@ export const pricingSections: PricingSection[] = [
       {
         name: "SEO Growth",
         audience: "Brands scaling organic acquisition",
-        price: "₹19,999/month",
+        price: "USD $240/month | INR 19,999/month",
         featured: true,
         points: [
           "Everything in Starter",
@@ -88,7 +88,7 @@ export const pricingSections: PricingSection[] = [
       {
         name: "SEO Domination",
         audience: "Competitive industries and multi-location businesses",
-        price: "₹34,999+/month",
+        price: "USD $420+/month | INR 34,999+/month",
         points: [
           "Aggressive strategy for competitive terms",
           "Advanced technical SEO and site structure",
@@ -108,7 +108,7 @@ export const pricingSections: PricingSection[] = [
       {
         name: "Basic",
         audience: "Instagram only or LinkedIn only",
-        price: "₹7,999/month",
+        price: "USD $95/month | INR 7,999/month",
         points: [
           "8-10 posts per month",
           "Basic creative templates and captions",
@@ -121,7 +121,7 @@ export const pricingSections: PricingSection[] = [
       {
         name: "Growth",
         audience: "Businesses building stronger brand presence",
-        price: "₹14,999/month",
+        price: "USD $180/month | INR 14,999/month",
         featured: true,
         points: [
           "12-16 posts + stories/reels guidance",
@@ -135,7 +135,7 @@ export const pricingSections: PricingSection[] = [
       {
         name: "Scale",
         audience: "High-activity brands and founders",
-        price: "₹24,999+/month",
+        price: "USD $300+/month | INR 24,999+/month",
         points: [
           "Advanced content production workflow",
           "Growth experiments and ad support alignment",
@@ -155,8 +155,8 @@ export const pricingSections: PricingSection[] = [
     plans: [
       {
         name: "Starter Ads Management",
-        audience: "Ad spend up to ₹40,000/month",
-        price: "Management fee: ₹9,999/month",
+        audience: "Ad spend up to USD $480/month | INR 40,000/month",
+        price: "Management fee: USD $120/month | INR 9,999/month",
         points: [
           "Campaign setup and conversion tracking",
           "Keyword/audience research",
@@ -168,8 +168,8 @@ export const pricingSections: PricingSection[] = [
       },
       {
         name: "Growth Ads Management",
-        audience: "Ad spend up to ₹1,00,000/month",
-        price: "Management fee: ₹19,999/month",
+        audience: "Ad spend up to USD $1,200/month | INR 1,00,000/month",
+        price: "Management fee: USD $240/month | INR 19,999/month",
         featured: true,
         points: [
           "Multi-campaign structure across Google/Meta",
@@ -183,7 +183,7 @@ export const pricingSections: PricingSection[] = [
       {
         name: "Performance Partner",
         audience: "Higher spends and multi-offer businesses",
-        price: "Management fee: ₹29,999+/month",
+        price: "Management fee: USD $360+/month | INR 29,999+/month",
         points: [
           "Full-funnel performance planning",
           "Advanced attribution and tracking stack",
@@ -204,7 +204,7 @@ export const pricingSections: PricingSection[] = [
       {
         name: "Email Starter",
         audience: "Early-stage email setup",
-        price: "₹6,999/month",
+        price: "USD $85/month | INR 6,999/month",
         points: [
           "2 campaigns/month",
           "Template design refresh",
@@ -217,7 +217,7 @@ export const pricingSections: PricingSection[] = [
       {
         name: "Email Growth",
         audience: "Growing D2C and service businesses",
-        price: "₹12,999/month",
+        price: "USD $160/month | INR 12,999/month",
         featured: true,
         points: [
           "4 campaigns/month",
@@ -231,7 +231,7 @@ export const pricingSections: PricingSection[] = [
       {
         name: "Email Scale",
         audience: "High-LTV brands",
-        price: "₹19,999+/month",
+        price: "USD $240+/month | INR 19,999+/month",
         points: [
           "6+ campaigns/month",
           "Re-engagement and win-back automation",
@@ -242,5 +242,58 @@ export const pricingSections: PricingSection[] = [
         cta: "Discuss scale strategy"
       }
     ]
+  },
+  {
+    id: "ai-agent-automation",
+    label: "AI Agent Automation",
+    description:
+      "AI agents and workflow automations for lead qualification, follow-ups, support, and sales ops.",
+    plans: [
+      {
+        name: "AI Lead Capture Starter",
+        audience: "Early-stage businesses testing AI-assisted lead handling",
+        price: "Setup: USD $600 - $1,450 | INR 49,999 - 1,20,000",
+        timeline: "Support: USD $180 - $360/month | INR 14,999 - 29,999/month",
+        points: [
+          "Website or WhatsApp AI assistant setup",
+          "Lead qualification rules and human handoff",
+          "Basic CRM integration and routing",
+          "Prompt tuning + weekly transcript reviews",
+          "Monthly performance snapshot"
+        ],
+        cta: "Launch AI Starter"
+      },
+      {
+        name: "AI Growth Automation",
+        audience: "Growing brands needing appointment and follow-up automation",
+        price: "Setup: USD $1,500 - $3,375 | INR 1,25,000 - 2,80,000",
+        timeline: "Support: USD $420 - $965/month | INR 34,999 - 79,999/month",
+        featured: true,
+        points: [
+          "Multi-channel assistant (web + WhatsApp + email)",
+          "Sales qualification logic with booking workflows",
+          "CRM updates, reminders, and escalation rules",
+          "Knowledge base integration and versioning",
+          "Monthly strategy sprint + optimization roadmap"
+        ],
+        cta: "Choose AI Growth"
+      },
+      {
+        name: "AI Revenue Ops Partner",
+        audience: "Scale-ready teams requiring custom multi-agent systems",
+        price: "Setup: USD $4,220 - $10,250+ | INR 3,50,000 - 8,50,000+",
+        timeline: "Support: USD $1,085 - $3,010/month | INR 89,999 - 2,49,999/month",
+        points: [
+          "Custom multi-agent architecture for sales and support",
+          "Approval controls, fallback logic, and QA monitoring",
+          "Advanced analytics, attribution, and executive dashboards",
+          "Deep integrations with CRM, helpdesk, and internal tools",
+          "Dedicated pod with weekly optimization cycles"
+        ],
+        cta: "Request Enterprise AI Plan"
+      }
+    ],
+    note:
+      "Pricing ranges are benchmarked to current 2026 agency market quotes and vary by integrations, channels, data complexity, and QA requirements."
   }
 ];

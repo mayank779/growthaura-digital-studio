@@ -9,11 +9,11 @@ type LeadFormProps = {
 };
 
 const budgets = [
-  "Below ₹25,000 / month",
-  "₹25,000 - ₹50,000 / month",
-  "₹50,000 - ₹1,00,000 / month",
-  "₹1,00,000 - ₹3,00,000 / month",
-  "₹3,00,000+ / month"
+  "Below $500 / month | INR below 41,500/month",
+  "$500 - $1,500 / month | INR 41,500 - 1,24,500/month",
+  "$1,500 - $4,000 / month | INR 1,24,500 - 3,32,000/month",
+  "$4,000 - $10,000 / month | INR 3,32,000 - 8,30,000/month",
+  "$10,000+ / month | INR 8,30,000+/month"
 ];
 
 const serviceOptions = ["Web Dev", "SEO", "Social Media", "Ads", "Email Marketing", "Branding", "Other"];
@@ -50,8 +50,8 @@ export function LeadForm({ compact = false }: LeadFormProps) {
       nextErrors.email = "Enter a valid email address.";
     }
 
-    if (phone && !/^[+]?[0-9\s-]{10,15}$/.test(phone)) {
-      nextErrors.phone = "Enter a valid Indian phone number.";
+    if (phone && !/^[+]?[0-9\s-]{7,18}$/.test(phone)) {
+      nextErrors.phone = "Enter a valid phone number with country code.";
     }
 
     if (!selectedServices.length) {
@@ -111,9 +111,9 @@ export function LeadForm({ compact = false }: LeadFormProps) {
           </div>
           <div>
             <label htmlFor="phone" className="mb-2 block text-sm font-medium text-slate-700">
-              Phone (India)
+              Phone (with country code)
             </label>
-            <input id="phone" type="tel" name="phone" className={formClass} />
+            <input id="phone" type="tel" name="phone" className={formClass} placeholder="+1 555 123 4567" />
             {errors.phone ? <p className="mt-1 text-xs text-rose-600">{errors.phone}</p> : null}
           </div>
           <div>
@@ -208,3 +208,4 @@ export function LeadForm({ compact = false }: LeadFormProps) {
     </div>
   );
 }
+

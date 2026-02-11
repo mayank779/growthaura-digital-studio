@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Mayank Digital Labs",
     short_name: "MDL",
     description:
-      "Mayank Digital Labs helps Indian businesses grow with websites, SEO, paid ads, and lifecycle marketing.",
+      "Mayank Digital Labs helps businesses worldwide grow with websites, SEO, paid ads, and lifecycle marketing.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

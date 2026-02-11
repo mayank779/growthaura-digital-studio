@@ -21,17 +21,9 @@ export function BrandLogo({ compact = false, className }: BrandLogoProps) {
         />
       </span>
       {!compact ? (
-        <>
-          <span className="text-base font-semibold tracking-tight text-slate-100 md:hidden">Mayank</span>
-          <Image
-            src="/mayank-digital-labs-wordmark.svg"
-            alt={siteConfig.brandName}
-            width={320}
-            height={48}
-            className="hidden h-8 w-auto md:block"
-            priority
-          />
-        </>
+        <span className="font-heading text-base font-semibold tracking-tight text-slate-100 sm:text-lg">
+          {siteConfig.brandName}
+        </span>
       ) : null}
     </div>
   );

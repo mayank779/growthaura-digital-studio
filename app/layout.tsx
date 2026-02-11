@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
+import { CurrencyModeProvider } from "@/components/currency/CurrencyModeProvider";
 import { siteConfig } from "@/data/site";
 
 const heading = Sora({
@@ -21,19 +22,34 @@ const body = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
+  alternates: {
+    canonical: "/"
+  },
   title: {
-    default: "Mayank Digital Labs | Website Development & Marketing Agency in India",
+    default: "Mayank Digital Labs | Website Development & Marketing Agency Worldwide",
     template: "%s | Mayank Digital Labs"
   },
   description:
-    "Mayank Digital Labs is a digital marketing agency in India specializing in website development, SEO, Google Ads, Meta Ads, social media, and email marketing.",
+    "Mayank Digital Labs is a digital marketing agency serving businesses worldwide with website development, SEO, Google Ads, Meta Ads, social media, email marketing, and AI agent automation.",
   keywords: [
-    "website development agency in India",
+    "website development agency worldwide",
     "SEO and Google Ads expert",
-    "digital marketing agency India",
+    "digital marketing agency global",
     "Instagram LinkedIn marketing agency",
-    "Meta ads management India"
+    "Meta ads management services",
+    "AI agent automation agency"
   ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -50,21 +66,42 @@ export const metadata: Metadata = {
     url: siteConfig.domain,
     siteName: "Mayank Digital Labs",
     type: "website",
-    locale: "en_IN"
+    locale: "en_US",
+    images: [
+      {
+        url: "/icon-512.png",
+        width: 512,
+        height: 512,
+        alt: "Mayank Digital Labs"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Mayank Digital Labs",
-    description: siteConfig.tagline
+    description: siteConfig.tagline,
+    images: ["/icon-512.png"]
   }
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["ProfessionalService", "LocalBusiness"],
   name: siteConfig.brandName,
   url: siteConfig.domain,
-  image: `${siteConfig.domain}/og-image.jpg`,
+  image: `${siteConfig.domain}/icon-512.png`,
+  logo: `${siteConfig.domain}/icon-512.png`,
+  description: siteConfig.tagline,
+  areaServed: "Worldwide",
+  priceRange: "USD",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "10:00",
+      closes: "19:00"
+    }
+  ],
   telephone: siteConfig.phone,
   email: siteConfig.email,
   address: {
@@ -76,6 +113,14 @@ const organizationSchema = {
     addressCountry: "IN"
   },
   sameAs: siteConfig.socialLinks.map((item) => item.href)
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteConfig.brandName,
+  url: siteConfig.domain,
+  inLanguage: "en"
 };
 
 export default function RootLayout({
@@ -90,12 +135,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
-        <div className="relative min-h-screen">
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <BackToTop />
-        </div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+        <CurrencyModeProvider>
+          <div className="relative min-h-screen">
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <BackToTop />
+          </div>
+        </CurrencyModeProvider>
       </body>
     </html>
   );
