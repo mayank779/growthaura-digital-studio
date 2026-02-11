@@ -1,4 +1,4 @@
-import { Laptop, LineChart, Megaphone, Target, Mail, Palette } from "lucide-react";
+import { Laptop, LayoutGrid, LineChart, Mail, Megaphone, Palette, Target } from "lucide-react";
 
 type IconResolverProps = {
   name: string;
@@ -11,7 +11,8 @@ const iconMap = {
   Megaphone,
   Target,
   Mail,
-  Palette
+  Palette,
+  LayoutGrid
 };
 
 export function IconResolver({ name, className }: IconResolverProps) {

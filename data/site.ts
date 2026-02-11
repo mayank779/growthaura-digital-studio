@@ -37,10 +37,18 @@ export const aiAutomationNavItems: NavItem[] = [
   { label: "AI Pricing Plans", href: "/pricing?category=ai-agent-automation" }
 ];
 
+export const designNavItems: NavItem[] = [
+  { label: "Graphic Design", href: "/graphic-design-services" },
+  { label: "UI/UX Design", href: "/ui-ux-design-services" },
+  { label: "Design Pricing", href: "/pricing?category=graphic-design" }
+];
+
 export const footerResources = [
   { label: "AI Agent Automation Services", href: "/ai-agent-automation-services" },
   { label: "AI Chatbot + CRM Automation", href: "/ai-chatbot-crm-automation" },
   { label: "AI Lead Follow-Up Automation", href: "/ai-lead-qualification-follow-up-automation" },
+  { label: "Graphic Design Services", href: "/graphic-design-services" },
+  { label: "UI/UX Design Services", href: "/ui-ux-design-services" },
   { label: "Blog", href: "/blog" },
   { label: "FAQs", href: "/faqs" },
   { label: "Privacy Policy", href: "/privacy-policy" },

@@ -7,6 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/",
     "/services",
     "/pricing",
+    "/graphic-design-services",
+    "/ui-ux-design-services",
     "/ai-agent-automation-services",
     "/ai-chatbot-crm-automation",
     "/ai-lead-qualification-follow-up-automation",

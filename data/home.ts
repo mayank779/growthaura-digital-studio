@@ -48,6 +48,22 @@ export const heroSlides = [
     image:
       "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1600&q=80",
     imageAlt: "Social media and email marketing campaign planning"
+  },
+  {
+    title: "Graphic Design That Elevates Brands",
+    subtitle: "Build premium visual identity, social creatives, and campaign assets.",
+    href: "/graphic-design-services",
+    image:
+      "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Designer workspace with color swatches and brand design material"
+  },
+  {
+    title: "UI/UX Design for Better Conversions",
+    subtitle: "Improve user journeys with wireframes, interfaces, and conversion-first UX.",
+    href: "/ui-ux-design-services",
+    image:
+      "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "UI/UX design wireframes and product interface mockups"
   }
 ];
 

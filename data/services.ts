@@ -103,6 +103,40 @@ export const services: Service[] = [
       "Website graphics and campaign assets",
       "Editable source files and usage guidance"
     ]
+  },
+  {
+    slug: "graphic-design",
+    title: "Graphic Design Services",
+    shortDescription:
+      "High-impact design systems and campaign creatives built to boost clarity, engagement, and brand recall.",
+    outcome: "Stronger creative consistency that improves campaign response and trust.",
+    icon: "Palette",
+    startingPrice: "USD $180/project | INR 14,999/project",
+    pricingNote: "Starting at USD $180/project | INR 14,999/project",
+    includeList: [
+      "Social media and ad creative systems",
+      "Campaign banners, deck graphics, and brand collaterals",
+      "Creative format adaptation for channel-specific placements",
+      "Design QA for visual consistency",
+      "Editable source files with handoff notes"
+    ]
+  },
+  {
+    slug: "ui-ux-design",
+    title: "UI/UX Design Services",
+    shortDescription:
+      "User-centered wireframes and interface design for websites, products, and conversion funnels.",
+    outcome: "Cleaner journeys, lower friction, and higher conversion potential.",
+    icon: "LayoutGrid",
+    startingPrice: "USD $300/project | INR 24,999/project",
+    pricingNote: "Starting at USD $300/project | INR 24,999/project",
+    includeList: [
+      "UX audit, flow mapping, and information architecture",
+      "Wireframes and high-fidelity interface design",
+      "Responsive layouts for desktop, tablet, and mobile",
+      "CTA and form UX optimization",
+      "Developer-ready design documentation"
+    ]
   }
 ];
 
@@ -156,7 +190,9 @@ export const detailedServices: Service[] = [
     startingPrice: "USD $180/project | INR 14,999/project",
     pricingNote: "Starting at USD $180/project | INR 14,999/project",
     includeList: services[5].includeList
-  }
+  },
+  services[6],
+  services[7]
 ];
 
 export const highlightCards = [

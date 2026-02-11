@@ -4,6 +4,7 @@ export const seoKeywords = {
     "website development and SEO services",
     "Google Ads and Meta Ads management",
     "AI agent automation services",
+    "graphic design and ui ux design services",
     "conversion-focused growth partner"
   ],
   services: [
@@ -11,13 +12,16 @@ export const seoKeywords = {
     "technical SEO and content strategy",
     "social media management services",
     "performance marketing agency",
-    "email marketing automation services"
+    "email marketing automation services",
+    "graphic design and ui ux design agency"
   ],
   pricing: [
     "digital marketing pricing packages",
     "AI agent automation pricing",
     "SEO and ads management cost",
     "website development package pricing",
+    "graphic design pricing packages",
+    "ui ux design pricing",
     "global agency pricing plans"
   ],
   about: [
@@ -32,6 +36,13 @@ export const seoKeywords = {
     "ai lead qualification automation pricing",
     "business ai workflow automation services",
     "sales follow-up automation with ai"
+  ],
+  designServices: [
+    "graphic design services worldwide",
+    "ui ux design services agency",
+    "brand identity and visual design services",
+    "website and product ui ux design",
+    "creative design pricing packages"
   ]
 } as const;
 
@@ -59,6 +70,16 @@ export const internalLinkGroups = {
       href: "/ai-lead-qualification-follow-up-automation",
       description: "Compare lead qualification and nurture automation systems."
     },
+    {
+      label: "Graphic Design Services",
+      href: "/graphic-design-services",
+      description: "View brand identity, social creatives, and campaign design packages."
+    },
+    {
+      label: "UI/UX Design Services",
+      href: "/ui-ux-design-services",
+      description: "Explore wireframe, UI systems, and conversion-focused UX design scope."
+    },
     { label: "See Portfolio", href: "/portfolio", description: "Browse projects and measurable growth outcomes." },
     { label: "Read Testimonials", href: "/testimonials", description: "Hear client feedback from multiple industries." },
     { label: "Book Strategy Call", href: "/contact#lead-form", description: "Request a custom growth roadmap for your goals." }
@@ -66,6 +87,10 @@ export const internalLinkGroups = {
   pricing: [
     { label: "Website Services", href: "/services#website-design-development" },
     { label: "SEO Services", href: "/services#seo-services" },
+    { label: "Graphic Design Services", href: "/graphic-design-services" },
+    { label: "UI/UX Design Services", href: "/ui-ux-design-services" },
+    { label: "Graphic Design Pricing", href: "/pricing?category=graphic-design" },
+    { label: "UI/UX Design Pricing", href: "/pricing?category=ui-ux-design" },
     { label: "AI Automation Section", href: "/#ai-agent-automation" },
     { label: "AI Agent Services", href: "/ai-agent-automation-services" },
     { label: "AI Chatbot CRM Automation", href: "/ai-chatbot-crm-automation" },
@@ -75,6 +100,10 @@ export const internalLinkGroups = {
   ],
   services: [
     { label: "Explore Full Pricing", href: "/pricing" },
+    { label: "Graphic Design Pricing", href: "/pricing?category=graphic-design" },
+    { label: "UI/UX Design Pricing", href: "/pricing?category=ui-ux-design" },
+    { label: "Graphic Design Services", href: "/graphic-design-services" },
+    { label: "UI/UX Design Services", href: "/ui-ux-design-services" },
     { label: "AI Agent Automation Pricing", href: "/pricing?category=ai-agent-automation" },
     { label: "AI Agent Services", href: "/ai-agent-automation-services" },
     { label: "AI Chatbot CRM Automation", href: "/ai-chatbot-crm-automation" },

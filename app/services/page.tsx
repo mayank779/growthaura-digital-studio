@@ -15,7 +15,7 @@ import { IconResolver } from "@/components/IconResolver";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Website development, SEO, social media marketing, Google Ads, Meta Ads, email marketing, branding, and AI-ready growth services for businesses worldwide.",
+    "Website development, SEO, social media marketing, Google Ads, Meta Ads, email marketing, graphic design, UI/UX design, branding, and AI-ready growth services worldwide.",
   keywords: [...seoKeywords.services],
   alternates: {
     canonical: "/services"
@@ -50,8 +50,8 @@ export default function ServicesPage() {
             Mayank Digital Labs services built to generate leads, revenue, and brand authority
           </h1>
           <p className="mt-5 text-base leading-relaxed text-slate-200 sm:text-lg">
-            We combine web development, SEO, social media, performance ads, email marketing, and creative
-            execution to build predictable growth systems for businesses worldwide.
+            We combine web development, SEO, social media, performance ads, email marketing, graphic design, and
+            UI/UX execution to build predictable growth systems for businesses worldwide.
           </p>
           <div className="mt-4">
             <CurrencyToggle />

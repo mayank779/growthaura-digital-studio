@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { aiAutomationNavItems, navItems, siteConfig } from "@/data/site";
+import { aiAutomationNavItems, designNavItems, navItems, siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PrimaryLink } from "@/components/ui/PrimaryLink";
@@ -12,7 +12,9 @@ import { PrimaryLink } from "@/components/ui/PrimaryLink";
 export function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDesktopDesignOpen, setIsDesktopDesignOpen] = useState(false);
   const [isDesktopAIOpen, setIsDesktopAIOpen] = useState(false);
+  const [isMobileDesignOpen, setIsMobileDesignOpen] = useState(false);
   const [isMobileAIOpen, setIsMobileAIOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
@@ -21,6 +23,7 @@ export function Header() {
     return path === "/" ? pathname === "/" : pathname === path || pathname.startsWith(`${path}/`);
   };
 
+  const isDesignDropdownActive = designNavItems.some((item) => isLinkActive(item.href));
   const isAIDropdownActive = aiAutomationNavItems.some((item) => isLinkActive(item.href));
 
   useEffect(() => {
@@ -32,7 +35,9 @@ export function Header() {
 
   useEffect(() => {
     setIsMenuOpen(false);
+    setIsDesktopDesignOpen(false);
     setIsDesktopAIOpen(false);
+    setIsMobileDesignOpen(false);
     setIsMobileAIOpen(false);
   }, [pathname]);
 
@@ -63,6 +68,63 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+
+          <div
+            className={cn("relative", isDesktopDesignOpen && "z-50")}
+            onMouseEnter={() => setIsDesktopDesignOpen(true)}
+            onMouseLeave={() => setIsDesktopDesignOpen(false)}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                setIsDesktopDesignOpen(false);
+              }
+            }}
+          >
+            <button
+              type="button"
+              onClick={() => setIsDesktopDesignOpen((prev) => !prev)}
+              className={cn(
+                "inline-flex items-center gap-1.5 text-sm font-medium transition",
+                isDesignDropdownActive || isDesktopDesignOpen ? "text-white" : "text-slate-300 hover:text-white"
+              )}
+              aria-haspopup="menu"
+              aria-expanded={isDesktopDesignOpen}
+              aria-label="Open Design Services menu"
+            >
+              Design Services
+              <ChevronDown className={cn("h-4 w-4 transition", isDesktopDesignOpen && "rotate-180")} />
+            </button>
+
+            <div
+              className={cn(
+                "absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-2 transition",
+                isDesktopDesignOpen ? "visible opacity-100" : "invisible pointer-events-none opacity-0"
+              )}
+            >
+              <div role="menu" className="rounded-2xl border border-slate-700 bg-ink-900/95 p-2 shadow-xl backdrop-blur-md">
+                <p className="px-2 pb-2 pt-1 text-[11px] font-semibold uppercase tracking-[0.11em] text-slate-400">
+                  Design Solutions
+                </p>
+                <div className="grid gap-1">
+                  {designNavItems.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      role="menuitem"
+                      onClick={() => setIsDesktopDesignOpen(false)}
+                      className={cn(
+                        "rounded-xl px-3 py-2.5 text-sm transition",
+                        isLinkActive(item.href)
+                          ? "bg-slate-800 text-white"
+                          : "text-slate-300 hover:bg-slate-800/80 hover:text-white"
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div
             className={cn("relative", isDesktopAIOpen && "z-50")}
@@ -168,6 +230,48 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
+
+              <div className="rounded-xl border border-slate-700/80 bg-slate-900/60">
+                <button
+                  type="button"
+                  onClick={() => setIsMobileDesignOpen((prev) => !prev)}
+                  className={cn(
+                    "flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition",
+                    isDesignDropdownActive || isMobileDesignOpen
+                      ? "bg-slate-800 text-white"
+                      : "text-slate-300 hover:bg-slate-800/70 hover:text-white"
+                  )}
+                  aria-expanded={isMobileDesignOpen}
+                  aria-label="Toggle Design Services links"
+                >
+                  <span>Design Services</span>
+                  <ChevronDown className={cn("h-4 w-4 transition", isMobileDesignOpen && "rotate-180")} />
+                </button>
+                <div className={cn("grid transition-all", isMobileDesignOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
+                  <div className="overflow-hidden">
+                    <div className="grid gap-1 px-2 pb-2">
+                      {designNavItems.map((item) => (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            setIsMobileDesignOpen(false);
+                          }}
+                          className={cn(
+                            "rounded-lg px-3 py-2 text-sm transition",
+                            isLinkActive(item.href)
+                              ? "bg-slate-800 text-white"
+                              : "text-slate-300 hover:bg-slate-800/70 hover:text-white"
+                          )}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div className="rounded-xl border border-slate-700/80 bg-slate-900/60">
                 <button

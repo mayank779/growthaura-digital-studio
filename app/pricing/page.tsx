@@ -83,7 +83,7 @@ export default function PricingPage() {
           <SectionHeading
             eyebrow="Packages"
             title="Select a service category to view pricing and inclusions"
-            description="Pricing reflects realistic 2026 market ranges for high-quality agency work, including AI agent automation systems."
+            description="Pricing reflects realistic 2026 market ranges for high-quality agency work, including AI automation, graphic design, and UI/UX systems."
           />
           <div className="mb-5">
             <CurrencyToggle />

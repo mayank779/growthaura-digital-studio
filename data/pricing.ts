@@ -244,6 +244,108 @@ export const pricingSections: PricingSection[] = [
     ]
   },
   {
+    id: "graphic-design",
+    label: "Graphic Design",
+    description: "Brand identity, social creatives, and campaign design systems for high-impact communication.",
+    plans: [
+      {
+        name: "Creative Starter Pack",
+        audience: "For founders and small teams launching visual consistency",
+        price: "USD $180 - $360 | INR 14,999 - 29,999",
+        timeline: "Timeline: 5-10 working days",
+        points: [
+          "Logo refinement or mini identity setup",
+          "Color and typography recommendation sheet",
+          "10 social media design templates",
+          "2 ad creatives for campaign launch",
+          "Editable source files"
+        ],
+        cta: "Start Creative Pack"
+      },
+      {
+        name: "Brand + Social Design Suite",
+        audience: "Growing brands needing recurring creatives",
+        price: "USD $420 - $965/month | INR 34,999 - 79,999/month",
+        timeline: "Timeline: Monthly retainer",
+        featured: true,
+        points: [
+          "Brand style guide and visual system refresh",
+          "Monthly social media creative batch",
+          "Ad creatives with format adaptations",
+          "Landing page visual assets and banners",
+          "Bi-weekly creative review loop"
+        ],
+        cta: "Choose Design Suite"
+      },
+      {
+        name: "Campaign Creative Partner",
+        audience: "High-volume brands and agencies",
+        price: "USD $1,085+/month | INR 89,999+/month",
+        timeline: "Timeline: Ongoing monthly partnership",
+        points: [
+          "Multi-campaign creative production",
+          "Rapid variant generation for A/B testing",
+          "Brand consistency QA across channels",
+          "Priority turnaround workflow",
+          "Dedicated creative lead"
+        ],
+        cta: "Request Creative Partner Plan"
+      }
+    ],
+    note: "Pricing depends on monthly design volume, complexity, and expected turnaround timelines."
+  },
+  {
+    id: "ui-ux-design",
+    label: "UI/UX Design",
+    description: "User-centered UX flows and modern UI systems for websites, funnels, and digital products.",
+    plans: [
+      {
+        name: "UX Audit + Wireframe Sprint",
+        audience: "For teams improving existing funnels or websites",
+        price: "USD $300 - $720 | INR 24,999 - 59,999",
+        timeline: "Timeline: 1-2 weeks",
+        points: [
+          "Current experience audit and friction analysis",
+          "User journey map and conversion recommendations",
+          "Low-fidelity wireframes for priority pages",
+          "CTA and form UX optimization suggestions",
+          "Actionable implementation handoff"
+        ],
+        cta: "Start UX Audit Sprint"
+      },
+      {
+        name: "UI/UX Product Design",
+        audience: "For startups and product teams shipping new experiences",
+        price: "USD $965 - $2,410 | INR 79,999 - 1,99,999",
+        timeline: "Timeline: 3-6 weeks",
+        featured: true,
+        points: [
+          "Research-backed information architecture",
+          "Wireframes to high-fidelity UI design",
+          "Responsive design system for web/mobile",
+          "Prototype for stakeholder/user walkthroughs",
+          "Developer-ready design specifications"
+        ],
+        cta: "Choose UI/UX Product Plan"
+      },
+      {
+        name: "UI/UX Growth Partner",
+        audience: "Scale-stage teams requiring ongoing UX optimization",
+        price: "USD $1,450+/month | INR 1,20,000+/month",
+        timeline: "Timeline: Ongoing monthly optimization",
+        points: [
+          "Continuous UX testing and iteration support",
+          "Design system governance and component evolution",
+          "Landing page and funnel UX experiments",
+          "Cross-team collaboration with dev and marketing",
+          "Monthly UX impact reporting"
+        ],
+        cta: "Book UI/UX Growth Partner"
+      }
+    ],
+    note: "Final cost depends on page count, user flow depth, product complexity, and research scope."
+  },
+  {
     id: "ai-agent-automation",
     label: "AI Agent Automation",
     description:
