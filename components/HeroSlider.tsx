@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ChevronRight } from "lucide-react";
@@ -17,8 +18,8 @@ export function HeroSlider() {
   }, []);
 
   return (
-    <div className="rounded-3xl border border-slate-700/60 bg-slate-900/70 p-6 shadow-soft backdrop-blur md:p-8">
-      <div className="relative min-h-[270px] sm:min-h-[250px]">
+    <div className="rounded-3xl border border-slate-700/60 bg-slate-900/70 p-5 shadow-soft backdrop-blur sm:p-6 md:p-7">
+      <div className="relative min-h-[220px] sm:min-h-[235px]">
         {heroSlides.map((slide, index) => (
           <article
             key={slide.title}
@@ -31,7 +32,7 @@ export function HeroSlider() {
             <p className="mt-3 max-w-lg text-sm leading-relaxed text-slate-300 sm:text-base">{slide.subtitle}</p>
             <Link
               href={slide.href}
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-200 transition hover:text-white"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-200 transition hover:text-white"
             >
               Learn more <ChevronRight size={16} />
             </Link>
@@ -39,7 +40,7 @@ export function HeroSlider() {
         ))}
       </div>
 
-      <div className="mt-8 flex items-center gap-3">
+      <div className="mt-4 flex items-center gap-3">
         {heroSlides.map((slide, index) => (
           <button
             key={slide.title}
@@ -50,6 +51,23 @@ export function HeroSlider() {
               current === index ? "w-9 bg-brand-400" : "w-2.5 bg-slate-500 hover:bg-slate-400"
             )}
             aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      <div className="relative mt-5 h-44 overflow-hidden rounded-2xl border border-slate-700/60 sm:h-52 md:h-56">
+        {heroSlides.map((slide, index) => (
+          <Image
+            key={`${slide.title}-image`}
+            src={slide.image}
+            alt={slide.imageAlt}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 42vw"
+            quality={72}
+            className={cn(
+              "object-cover transition duration-700",
+              current === index ? "scale-100 opacity-100" : "pointer-events-none scale-105 opacity-0"
+            )}
           />
         ))}
       </div>

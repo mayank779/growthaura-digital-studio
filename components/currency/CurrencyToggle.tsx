@@ -10,7 +10,6 @@ type ToggleOption = {
 };
 
 const options: ToggleOption[] = [
-  { label: "Both", value: "both" },
   { label: "USD", value: "usd" },
   { label: "INR", value: "inr" }
 ];
@@ -43,4 +42,3 @@ export function CurrencyToggle({ className }: CurrencyToggleProps) {
     </div>
   );
 }
-

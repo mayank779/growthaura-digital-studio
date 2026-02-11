@@ -204,20 +204,7 @@ export default function HomePage() {
             </ul>
           </div>
 
-          <div className="space-y-4">
-            <HeroSlider />
-            <div className="relative h-56 overflow-hidden rounded-3xl border border-slate-700/60">
-              <Image
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80"
-                alt="Mayank Digital Labs digital strategy workspace"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                quality={72}
-                className="object-cover"
-              />
-            </div>
-          </div>
+          <HeroSlider />
         </Container>
       </section>
 
@@ -296,7 +283,7 @@ export default function HomePage() {
           <div className="mb-5 flex justify-center">
             <div className="text-center">
               <CurrencyToggle />
-              <p className="mt-2 text-xs text-slate-500">Switch pricing view: USD, INR, or both.</p>
+              <p className="mt-2 text-xs text-slate-500">Switch pricing view: USD or INR.</p>
             </div>
           </div>
           <div className="mb-8 grid gap-3 sm:grid-cols-3">

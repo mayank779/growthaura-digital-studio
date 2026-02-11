@@ -55,7 +55,7 @@ export default function ServicesPage() {
           </p>
           <div className="mt-4">
             <CurrencyToggle />
-            <p className="mt-2 text-xs text-slate-300">Switch pricing notes between USD, INR, or both.</p>
+            <p className="mt-2 text-xs text-slate-300">Switch pricing notes between USD and INR.</p>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
             {seoKeywords.services.map((keyword) => (

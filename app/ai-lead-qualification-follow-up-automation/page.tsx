@@ -118,7 +118,7 @@ const executionModel = [
 
 const faqs = [
   {
-    question: "Can this work with both inbound forms and paid ads leads?",
+    question: "Can this work with inbound forms and paid ads leads?",
     answer:
       "Yes. We can ingest leads from website forms, paid campaign sources, social DMs, and messaging channels and apply consistent qualification logic."
   },

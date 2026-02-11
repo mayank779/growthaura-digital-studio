@@ -33,7 +33,7 @@ export function CurrencyModeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = window.localStorage.getItem(STORAGE_KEY);
-    if (saved === "usd" || saved === "inr" || saved === "both") {
+    if (saved === "usd" || saved === "inr") {
       setMode(saved);
       return;
     }

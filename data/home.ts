@@ -2,34 +2,52 @@ export const heroSlides = [
   {
     title: "Website Development That Converts",
     subtitle: "Launch trust-building, lead-focused websites built for business growth.",
-    href: "/services#website-design-development"
+    href: "/services#website-design-development",
+    image:
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Website development workspace with code and design tools"
   },
   {
     title: "AI Agents & Automation for Revenue Ops",
     subtitle:
       "Setup from USD $600 (INR 49,999) with monthly support from USD $180 (INR 14,999).",
-    href: "/pricing?category=ai-agent-automation"
+    href: "/pricing?category=ai-agent-automation",
+    image:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "AI automation concept visual for business operations"
   },
   {
     title: "AI Chatbot + CRM Automation",
     subtitle:
       "Automate lead qualification, CRM updates, and follow-ups across web, WhatsApp, and email.",
-    href: "/ai-chatbot-crm-automation"
+    href: "/ai-chatbot-crm-automation",
+    image:
+      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Team collaborating on customer communication and CRM workflows"
   },
   {
     title: "SEO & Content That Compounds",
     subtitle: "Capture high-intent traffic with technical, on-page, and off-page SEO.",
-    href: "/services#seo-services"
+    href: "/services#seo-services",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "SEO analytics dashboard and search performance chart"
   },
   {
     title: "Google & Meta Ads That Scale",
     subtitle: "Run ROI-driven paid campaigns with transparent reporting.",
-    href: "/services#performance-ads"
+    href: "/services#performance-ads",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Paid advertising campaign analytics on laptop screen"
   },
   {
     title: "Social + Email Growth Engine",
     subtitle: "Build brand authority and improve retention across channels.",
-    href: "/services#social-media-marketing"
+    href: "/services#social-media-marketing",
+    image:
+      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Social media and email marketing campaign planning"
   }
 ];
 

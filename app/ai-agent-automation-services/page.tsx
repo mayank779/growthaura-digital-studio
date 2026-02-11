@@ -278,7 +278,7 @@ export default function AIAgentAutomationServicesPage() {
           <SectionHeading
             eyebrow="Pricing"
             title="AI automation packages aligned to current agency ranges"
-            description="Switch between USD, INR, or both to compare setup and support options."
+            description="Switch between USD and INR to compare setup and support options."
           />
           <div className="mb-5">
             <CurrencyToggle />

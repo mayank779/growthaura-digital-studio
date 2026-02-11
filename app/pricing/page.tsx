@@ -87,7 +87,7 @@ export default function PricingPage() {
           />
           <div className="mb-5">
             <CurrencyToggle />
-            <p className="mt-2 text-xs text-slate-500">Switch currency view: USD, INR, or both.</p>
+            <p className="mt-2 text-xs text-slate-500">Switch currency view: USD or INR.</p>
           </div>
           <div className="mb-6 flex flex-wrap gap-2">
             {seoKeywords.pricing.map((keyword) => (
